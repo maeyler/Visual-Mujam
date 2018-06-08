@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
+    <meta http-equiv="Content-Language" content="tr">
+    <title>Visual Mujam -- Adam</title>
+</head>
+<script>
+"use strict";
+function makeRows(m, n) {
+	console.log("makeRows: "+m+"x"+n);
+	const REF = "http://kuranmeali.com/Sayfalar.php?sayfa=";
+    var page = [5, 53, 56, 111, 150, 151, 152, 153, 172, 287, 
+                288, 298, 308, 319, 443, 999]; //999 is sentinel
+    var ref = ["Bakara 31, 33, 34, 35, 37", "Âl-i İmrân 33", "Âl-i İmrân 59", 
+      "Maide 27", "A'raf 11", "A'raf 19", "A'raf 26, 27", "A'raf 31, 35", 
+      "A'raf 172", "İsra 61", "İsra 70", "Kehf 50", "Meryem 58", 
+      "Taha 115, 116, 117, 120, 121", "Yasin 60"];
+    var sajda = [175, 250, 271, 292, 308, 333, 364, 378, 415, 
+                453, 479, 527, 589, 597, 999]; //999 is sentinel
+  	var i, j, s, text = "", p = 0, q = 0;
+    var row = "<th>Juzz</th><td style='border: 0'>Page</td>";
+    	for (j = 1; j <= n; j++) {
+            if (j > 9) s = ""+j;
+            else s = "0"+j;
+    		row += "<th>+"+s+"</th>";
+        }
+    	text += "<tr>"+row+"</tr>";
+	for (i = 1; i <= m; i++) {
+	    var k = 20*(i-1);
+	    s = ""+k; while (s.length < 3) s = "0"+s;
+    	row = "<th>"+i+"</th><th>"+s+"</th>";
+    	for (j = k+1; j <= k+n; j++) {
+    	    if (j != page[p]) s = "";
+            else {
+                var c = ref[p].split(",").length;
+                s = "<a href='"+REF+j+"'>"+c+"</a>"
+                  +"<span class=tip>"+ref[p]+"</span>"; 
+                p++;
+            }
+    	    if (j == sajda[q]) {
+                s += " ۩"; q++;
+            }
+    		row += "<td>"+s+"</td>";
+        }
+    	text += "<tr>"+row+"</tr>";
+	}
+    console.log(text.length+" chars");
+	document.getElementById("tablo").innerHTML = text;
+}
+</script>
+<style>
+    table { border-collapse: collapse; }
+    th { color: gray; padding: 0px 4px; }
+    td { 
+        border: 1px solid blue; 
+        padding: 0px 4px; 
+        text-align: center; 
+    }
+    td:hover .tip { visibility: visible; }
+    .tip {
+        visibility: hidden;
+        font-size: 12px;
+        background-color: blue;
+        color: white;
+        text-align: center;
+        padding: 5px 5px;
+        position: absolute;
+    }
+</style>
+<body>
+<center>
+<p><a href="http://corpus.quran.com/qurandictionary.jsp?q=adm">آدَم</a> &nbsp; &nbsp; 
+Word: adam &nbsp; &nbsp; &nbsp; 25 instances on 15 pages -- Links are active</p>
+
+<table id="tablo"></table>
+
+<script>makeRows(30, 20)</script>
+
+<p>This website contains software for Visual Mujam<br>(C) 2018 MAE </p>
+</center>
+
+</body>
+</html>

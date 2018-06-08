@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
+    <meta http-equiv="Content-Language" content="tr">
+    <title>Visual Mujam -- sajdah</title>
+</head>
+<script>
+"use strict";
+function makeRows(m, n) {
+	console.log("makeRows: "+m+"x"+n);
+	const REF = "http://kuranmeali.com/Sayfalar.php?sayfa=";
+    var page = [175, 250, 271, 292, 308, 333, 364, 378, 415, 
+                453, 479, 527, 589, 597, 999]; //999 is sentinel
+    var ref = ["A'raf 206", "Ra'd 15", "Nahl 49", "Isra 109", 
+      "Meryem 58", "Hacc 18", "Furkan 60", "Neml 25", "Secde 15", 
+      "Sad 24", "Fussilet 37", "Necm 62", "İnşikak 21", "Alak 19"];
+  	var i, j, s, text = "", p = 0;
+    var row = "<th>Juzz</th><td style='border: 0'>Page</td>";
+    	for (j = 1; j <= n; j++) {
+            if (j > 9) s = ""+j;
+            else s = "0"+j;
+    		row += "<th>+"+s+"</th>";
+        }
+    	text += "<tr>"+row+"</tr>";
+	for (i = 1; i <= m; i++) {
+	    var k = 20*(i-1);
+	    s = ""+k; while (s.length < 3) s = "0"+s;
+    	row = "<th>"+i+"</th><th>"+s+"</th>";
+    	for (j = k+1; j <= k+n; j++) {
+    	    if (j != page[p]) s = "";
+            else {
+                s = "<a href='"+REF+j+"'>۩</a>"
+                +"<span class=tip>"+ref[p]+"</span>"; 
+                p++;
+            }
+    		row += "<td>"+s+"</td>";
+        }
+    	text += "<tr>"+row+"</tr>";
+	}
+    console.log(text.length+" chars");
+	document.getElementById("tablo").innerHTML = text;
+}
+</script>
+<style>
+    table { border-collapse: collapse; }
+    th { color: gray; padding: 0px 4px; }
+    td { 
+        border: 1px solid blue; 
+        padding: 0px 4px; 
+        text-align: center; 
+    }
+    td:hover .tip { visibility: visible; }
+    .tip {
+        visibility: hidden;
+        font-size: 12px;
+        background-color: blue;
+        color: white;
+        text-align: center;
+        padding: 5px 5px;
+        position: absolute;
+    }
+</style>
+<body>
+<center>
+<p>14 pages that contain <i>sajdah</i> (prostration) -- Links are active </p>
+
+<table id="tablo"></table>
+
+<script>makeRows(30, 20)</script>
+
+<p>This website contains software for Visual Mujam<br>(C) 2018 MAE </p>
+</center>
+
+</body>
+</html>
