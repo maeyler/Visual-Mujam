@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
+    <meta http-equiv="Content-Language" content="tr">
+    <title>Visual Mujam -- Adam</title>
+</head>
+<script>
+"use strict";
+var nameA, pageA, refA, sajda;  //global arrays
+var menu1, state;  //global elements
+function hide() {
+    state.style.visibility = "hidden"; //console.log("hide");
+}
+function show(v) {
+    state.value = v; state.style.visibility = "inherit";
+}
+function report(t) {
+    var line = t.split("\n"); var m = line.length;
+    console.log(t.length+" chars "+m+" lines");
+    m = Math.floor(m/3); //large arrays
+    nameA = new Array(m);
+    pageA = new Array(m);
+    refA  = new Array(m);
+    for (var i = 0; i < m; i++) {
+        nameA[i] = line[3*i];
+        pageA[i] = line[3*i+1];
+        refA[i]  = line[3*i+2];
+    }
+    sajda = pageA[0].split(", ");
+    sajda.push(999); //999 is sentinel
+    show("OK"); setTimeout(hide, 1000);
+    makeMenu(); makeTable(0);
+}
+function readData() {
+    show("FT");
+    const url 
+= "https://raw.githubusercontent.com/maeyler/Visual-Mujam/master/data.txt";
+    fetch(url)
+      .then(r => r.text())  //response
+      .then(t => report(t));  //text
+}
+function makeMenu() {
+    var text = "";
+    for (var i = 0; i < nameA.length; i++) 
+        text += "<option>"+nameA[i];
+    menu1.innerHTML = text;
+}
+function makeTable(mt) {
+    const m=30, n=20;
+	const REF = "http://kuranmeali.com/Sayfalar.php?sayfa=";
+	console.log("makeTable: "+mt);
+    var page = pageA[mt].split(", ");
+    page.push(999); //999 is sentinel
+    var ref = refA[mt].split(";");
+  	var s, text = "", p=0, q=0, nc=0;
+    var row = "<th>Juzz</th><td style='border: 0'>Page</td>";
+    	for (var j = 1; j <= n; j++) {
+            if (j > 9) s = ""+j;
+            else s = "0"+j;
+    		row += "<th>+"+s+"</th>";
+        }
+    	text += "<tr>"+row+"</tr>";
+	for (var i = 1; i <= m; i++) {
+	    var k = 20*(i-1);
+	    s = ""+k; while (s.length < 3) s = "0"+s;
+    	row = "<th>"+i+"</th><th>"+s+"</th>";
+    	for (var j = k+1; j <= k+n; j++) {
+    	    if (j != page[p]) s = "";
+            else {
+                var c = ref[p].split(",").length;
+                s = "<a href='"+REF+j+"'>"+c+"</a>"
+                  +"<span class=tip>"+ref[p]+"</span>"; 
+                p++; nc += c;
+            }
+    	    if (j == sajda[q]) {
+                s += " ۩"; q++;
+            }
+    		row += "<td>"+s+"</td>";
+        }
+    	text += "<tr>"+row+"</tr>";
+	}
+    console.log(text.length+" chars");
+	document.getElementById("tablo").innerHTML = text;
+	text = "<pre>Word: "+menu1.value+" &nbsp; &nbsp; "
+	   +nc+" instances on "+ref.length+" pages</pre>"
+	document.getElementById("output").innerHTML = text;
+}
+</script>
+<style>
+    table { border-collapse: collapse; }
+    th { color: gray; padding: 0px 4px; }
+    td { 
+        border: 1px solid blue; 
+        padding: 0px 4px; 
+        text-align: center; 
+    }
+    td:hover .tip { visibility: visible; }
+    .tip {
+        visibility: hidden;
+        font-size: 12px;
+        background-color: blue;
+        color: white;
+        text-align: center;
+        padding: 5px 5px;
+        position: absolute;
+    }
+</style>
+<body>
+<center>
+<!--a href="http://corpus.quran.com/qurandictionary.jsp?q=adm">آدَم</a-->
+
+<table>
+  <tr>
+    <th>
+      <select id=menu1 onChange="makeTable(selectedIndex)"></select>
+      <input type=button id=state style="visibility: hidden">
+    </th>
+    <th id=output>output will be here
+    </th>
+  </tr>
+</table>
+
+<table id="tablo"></table>
+
+<p></p>
+
+<script>
+    menu1 = document.getElementById("menu1");
+    state = document.getElementById("state");
+    readData(); 
+</script>
+
+<p>Software for Visual Mujam (C) 2018 MAE </p>
+</center>
+
+</body>
+</html>
