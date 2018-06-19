@@ -28,7 +28,11 @@ function report(t) {
     sajda = pageA[0].split(", ");
     sajda.push(999); //999 is sentinel
     showMessage("OK"); //setTimeout(hide, 1000);
-    makeMenu(menu1, nameA); makeTable();
+    makeMenu(menu1, nameA); 
+    var s = window.location.hash.substring(1);
+    if (s.length > 0) menu1.value = s;
+    console.log("Hash: "+s); 
+    makeTable();
 }
 function readData() {
     showMessage("Reading data");
@@ -91,6 +95,7 @@ function makeTable() {
     text = "<pre>Word: "+menu1.value+" &nbsp; &nbsp; "
        +nc+" instances on "+ref.length+" pages</pre>"
     showMessage(text); 
+    window.location.hash = "#"+menu1.value;
 }
 function doClick(e) {
     if (e == undefined) e = window.event;
