@@ -10,7 +10,6 @@
 <script>
 "use strict";
 var nameA, pageA, refA, sajda;  //global arrays
-var menu1, QuranWindow; //global elements
 function showMessage(v) {
     document.getElementById("output").innerHTML = v;
 }
@@ -29,7 +28,7 @@ function report(t) {
     sajda = pageA[0].split(", ");
     sajda.push(999); //999 is sentinel
     showMessage("OK"); //setTimeout(hide, 1000);
-    makeMenu(); makeTable();
+    makeMenu(menu1, nameA); makeTable();
 }
 function readData() {
     showMessage("Reading data");
@@ -39,11 +38,11 @@ function readData() {
       .then(r => r.text())  //response
       .then(t => report(t));  //text
 }
-function makeMenu() {
+function makeMenu(m, a) {
     var text = "";
-    for (var i = 0; i < nameA.length; i++) 
-        text += "<option>"+nameA[i];
-    menu1.innerHTML = text;
+    for (var i = 0; i < a.length; i++) 
+        text += "<option>"+a[i];
+    m.innerHTML = text;
 }
 function threeDigits(k) {
     var s = ""+k; 
@@ -155,7 +154,7 @@ function doClick(e) {
 </center>
 
 <script>
-    menu1 = document.getElementById("menu1");
+    const menu1 = document.getElementById("menu1");
     const TITLE = document.title;
     readData(); 
 </script>
