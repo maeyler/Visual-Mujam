@@ -31,7 +31,7 @@ function report(t) {
     sajda = pageA[0].split(", ");
     sajda.push(999); //999 is sentinel
     show("OK"); setTimeout(hide, 1000);
-    makeMenu(); makeTable(0);
+    makeMenu(); makeTable();
 }
 function readData() {
     show("FT");
@@ -47,9 +47,10 @@ function makeMenu() {
         text += "<option>"+nameA[i];
     menu1.innerHTML = text;
 }
-function makeTable(mt) {
+function makeTable() {
     const m=30, n=20;
 	const REF = "http://kuranmeali.com/Sayfalar.php?sayfa=";
+	var mt = menu1.selectedIndex;
 	console.log("makeTable: "+mt);
     var page = pageA[mt].split(", ");
     page.push(999); //999 is sentinel
@@ -114,8 +115,8 @@ function makeTable(mt) {
 <table>
   <tr>
     <th>
-      <select id=menu1 onChange="makeTable(selectedIndex)"></select>
-      <input type=button id=state style="visibility: hidden">
+      <select id=menu1 onChange="makeTable()" />
+      <input type=button id=state style="visibility: hidden" />
     </th>
     <th id=output>output will be here
     </th>
@@ -124,16 +125,14 @@ function makeTable(mt) {
 
 <table id="tablo"></table>
 
-<p></p>
+<p>Software for Visual Mujam (C) 2018 MAE </p>
+</center>
 
 <script>
     menu1 = document.getElementById("menu1");
     state = document.getElementById("state");
     readData(); 
 </script>
-
-<p>Software for Visual Mujam (C) 2018 MAE </p>
-</center>
 
 </body>
 </html>

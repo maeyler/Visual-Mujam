@@ -4,12 +4,11 @@ _Mujam_ is the general name for the books with a complete index of all the words
 
 For instance, the word _Adam_ occurs 25 times in Quran. _Concordantiae_ by G Flügel shows _Adam_ on [this page](https://archive.org/stream/concordantiaeco00flgoog#page/n28/mode/2up)
 
-
 Then comes computer software. [Here is the list](http://corpus.quran.com/qurandictionary.jsp?q=adm) of all occurrences of the same word with links to follow.
 
-Our aim in this project is to present the word list in a visual context. Here are two samples made manually:
-* [Sajdah](https://maeyler.github.io/Visual-Mujam/VM%20sajdah.html)
-* [Adam](https://maeyler.github.io/Visual-Mujam/Adem/Adem%20VM.html)
+Our aim in this project is to present the word list in a visual context. Several sample words were prepared manually. Two visual models currently under test:
+* [Test2](https://maeyler.github.io/Visual-Mujam/test2.html)
+* [Test3](https://maeyler.github.io/Visual-Mujam/test3.html)
 
 The challenge is to make similar pages automatically for each of the 4700 distinct words in Quran...
 
