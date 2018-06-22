@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Utilities </title>
+    <script src="Utilities.js"></script>
+</head>
+
+<script>
+function report(s) {
+    output.innerHTML = s; console.log(s);
+}
+function report2(c, v, i) {
+    report("Sayfa: "+pageOf(c, v)+" Kod: "+encode80(i))
+}
+function encode() {
+    const s = ref.value;
+    const sa = s.split(" ");
+    kod.value = "";
+    for (var i in sa) {
+        const cv = sa[i].split(":");
+        const n = indexOf(Number(cv[0]), Number(cv[1])); //encode80:
+        kod.value += charCode(Math.trunc(n/BASE)) + charCode(n%BASE);
+    }
+    report(s+" -> "+kod.value);
+}
+function decode() {
+    const s = kod.value; 
+    ref.value = "";
+    for (var i=0; i<s.length; i+=2) {
+        const c1 = s.charCodeAt(i), c2 = s.charCodeAt(i+1);
+        const cv = toCV(BASE*(c1-MIN) + (c2-MIN)); //decode80
+        ref.value += cv[0]+":"+cv[1]+" ";
+    }
+    report(s +" -> "+ref.value);
+}
+function toIndex() {
+    const c = Number(sure.value);
+    const v = Number(ayet.value);
+    const i = indexOf(c, v); indeks.value = i;
+    report2(c, v, i);
+}
+function toLocation() {
+    const i = Number(indeks.value);
+    const cv = toCV(i); 
+    sure.value = cv[0]; ayet.value = cv[1]; 
+    report2(Number(cv[0]), Number(cv[1]), i);
+}
+</script>
+
+<body>
+<h2 id=title></h2>
+<p />
+Sure: <input type=number id=sure value=25>
+Ayet: <input type=number id=ayet value=60>
+<input type=button value="Indeks" onClick="toIndex()">
+<p />
+Indeks <input type=number id=indeks value=0>
+<input type=button value="Ayet" onClick="toLocation()">
+
+<p id=output>Sayfa ??</p>
+
+<hr />
+Ref: <input type=text id=ref value="25:60 27:1 36:83">
+<input type=button value="Encode" onClick="encode()">
+<p />
+Kod <input type=text id=kod value="">
+<input type=button value="Decode" onClick="decode()">
+
+<p />
+<hr />
+Sure/Ayet <==> Sayfa/Indeks <br />
+Ayrıca her ayetin kodu <br />
+
+<script>
+"use strict";
+const title = document.getElementById("title");
+title.innerHTML = document.title; 
+const output = document.getElementById("output");
+const sure = document.getElementById("sure");
+sure.min = 1; sure.max = nChap;
+const ayet = document.getElementById("ayet");
+ayet.min = 1; ayet.max = 300;
+const indeks = document.getElementById("indeks");
+indeks.min = 1; indeks.max = nVerse;
+const kod = document.getElementById("kod");
+toIndex();
+</script>
+
+</body>
+</html>
