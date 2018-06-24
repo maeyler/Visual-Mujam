@@ -1,5 +1,31 @@
 "use strict";
 const BASE = 80, MIN = 7680, MAX = MIN+BASE-1;
+function encode36(n) {
+    n += 36*36;
+    return n.toString(36);
+}
+function decode36(s) {
+    return Number.parseInt(s, 36)-36*36;
+}
+function encodeLine(s) {
+    const sa = s.split(" ");
+    var v = "";
+    for (var j=0; j<sa.length; j++) {
+        const cv = sa[j].split(":");
+        const i = indexOf(Number(cv[0]), Number(cv[1]));
+        v += encode36(i); //encode80:
+    }
+    return v;
+}
+function decodeLine(s) {
+    var v = "";
+    for (var j=0; j<s.length; j+=3) {
+        const c = s.substring(j, j+3);
+        const cv = toCV(decode36(c)); //decode80
+        v += cv[0]+":"+cv[1]+" ";
+    }
+    return v;
+}
 function charCode(i) {
     return String.fromCharCode(MIN + i);
 }
