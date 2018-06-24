@@ -1,11 +1,5 @@
 "use strict";
 const BASE = 80, MIN = 7680, MAX = MIN+BASE-1;
-function report(s) {
-    output.innerHTML = s; console.log(s);
-}
-function report2(c, v, i) {
-    report("Sayfa: "+pageOf(c, v)+" Kod: "+encode80(i))
-}
 function charCode(i) {
     return String.fromCharCode(MIN + i);
 }
