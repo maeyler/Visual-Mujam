@@ -13,7 +13,7 @@ function encodeLine(s) {
     for (var j=0; j<sa.length; j++) {
         const cv = sa[j].split(":");
         const i = indexOf(Number(cv[0]), Number(cv[1]));
-        v += encode36(i); //encode80:
+        v += encode36(i);
     }
     return v;
 }
@@ -21,30 +21,13 @@ function decodeLine(s) {
     var v = "";
     for (var j=0; j<s.length; j+=3) {
         const c = s.substring(j, j+3);
-        const cv = toCV(decode36(c)); //decode80
+        const cv = toCV(decode36(c));
         v += cv[0]+":"+cv[1]+" ";
     }
     return v;
 }
 function charCode(i) {
     return String.fromCharCode(MIN + i);
-}
-function encode80(n) {
-    var s = "";
-    while (n > 0) {
-        const c = charCode(n%BASE);
-        s = c + s; n = Math.trunc(n/BASE);
-    }
-    return s;
-}
-function decode80(s) {
-    var n = 0;
-    for (var i=0; i<s.length; i++) {
-        const c = s.charCodeAt(i);
-        if (c<MIN || c>MAX) return n;
-        n = BASE*n + (c-MIN);
-    }
-    return n;
 }
 function indexOf(c, v) {
     return last[c-1]+v;
@@ -65,9 +48,7 @@ function toCV(i) {
     const c = toChapter(i);
     return [c, i - last[c-1]];
 }
-//function init() {
-  console.log("Start");
-  const last = [0,7,293,493,669,789,954,1160,1235,1364,
+const last = [0,7,293,493,669,789,954,1160,1235,1364,
     1473,1596,1707,1750,1802,1901,2029,2140,2250,2348,2483,
     2595,2673,2791,2855,2932,3159,3252,3340,3409,3469,3503,
     3533,3606,3660,3705,3788,3970,4058,4133,4218,4272,4325,
@@ -78,7 +59,9 @@ function toCV(i) {
     5967,5993,6023,6043,6058,6079,6090,6098,6106,6125,6130,
     6138,6146,6157,6168,6176,6179,6188,6193,6197,6204,6207,
     6213,6216,6221,6225,6230,6236];
-  const nChap = last.length-1, nVerse = last[nChap];
+const nChap = last.length-1, nVerse = last[nChap];
+var index, nPage, sName, pLabel = [];
+function init() {
   console.log(nChap+" suras -> "+nVerse);
   const count = [7,5,11,8,5,8,11,9,4,8,7,7,5,5,8,4,7,7,7,8,7,4,8,10,6,
     7,5,5,4,6,6,8,5,4,5,6,3,4,8,3,4,4,3,5,5,5,7,1,4,9,6,7,7,8,8,7,9,9,
@@ -102,8 +85,130 @@ function toCV(i) {
     24,27,27,34,26,23,8,7,6,5,6,5,10,4,6,7,8,5,6,7,9,8,7,7,9,9,5,7,7,
     5,12,14,19,26,19,26,28,29,16,17,13,15,19,18,30,28,26,20,25,31,30,
     24,32,42,29,19,36,25,22,36,26,30,20,36,19,27,13,19,19,17,14,14,15];
-  const nPage = count.length;
-  const index = new Array(nPage+1); index[0] = 0;
+  nPage = count.length;
+  index = new Array(nPage+1); index[0] = 0;
   for (var i=0; i<nPage; i++) index[i+1] = index[i] + count[i];
   console.log(nPage+" pages -> "+index[nPage]);
+  const suraNames = `
+Fatiha
+Bakara
+Ali İmran
+Nisa
+Maide
+Enam
+Araf
+Enfal
+Tevbe
+Yunus
+Hud
+Yusuf
+Rad
+İbrahim
+Hicr
+Nahl
+İsra
+Kehf
+Meryem
+Taha
+Enbiya
+Hacc
+Muminun
+Nur
+Furkan
+Şuara
+Neml
+Kasas
+Ankebut
+Rum
+Lokman
+Secde
+Ahzab
+Sebe
+Fatır
+Yasin
+Saffat
+Sad
+Zümer
+Mümin
+Fussilet
+Şura
+Zuhruf
+Duhan
+Casiye
+Ahkaf
+Muhammed
+Fetih
+Hucurat
+Kaf
+Zariyat
+Tur
+Necm
+Kamer
+Rahman
+Vakıa
+Hadid
+Mücadele
+Haşr
+Mümtahine
+Saff
+Cuma
+Münafıkun
+Tegabun
+Talak
+Tahrim
+Mülk
+Kalem
+Hakka
+Mearic
+Nuh
+Cinn
+Müzzemmil
+Müddessir
+Kıyamet
+İnsan
+Mürselat
+Nebe
+Naziat
+Abese
+Tekvir
+İnfitar
+Mutaffifin
+İnşikak
+Buruc
+Tarık
+Ala
+Gaşiye
+Fecr
+Beled
+Şems
+Leyl
+Duha
+İnşirah
+Tin
+Alak
+Kadir
+Beyyine
+Zilzal
+Adiyat
+Karia
+Tekasur
+Asr
+Hümeze
+Fil
+Kureyş
+Maun
+Kevser
+Kafirun
+Nasr
+Leheb
+İhlas
+Felak
+Nas`;
+    sName = suraNames.split("\n");
+    for (let p=0; p<=nPage; p++) {
+        let [c, v] = toCV(index[p]+1);
+        pLabel.push(sName[c]+" "+v+ ", p."+p)
+    }
+}
+init()
 

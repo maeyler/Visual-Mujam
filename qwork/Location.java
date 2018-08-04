@@ -1,4 +1,4 @@
-package root;
+package qwork;
 
 class Location implements Comparable<Location> {
     public final int chap, verse;
