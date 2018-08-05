@@ -14,16 +14,25 @@ import java.io.IOException;
 import org.jqurantree.arabic.ArabicText;
 
 class Root {  //lemmas within each root
-    String str;  int count = 0;
+    String str;  int numRef = 0;
     Map<String,Lemma> data = new TreeMap<>();
     public Root(String s) { str = s; }
     public String toString() {
-        return str+" "+data.size()+" "+count;
+        return str+" "+data.size()+" "+numRef;
+    }
+    public String toCode36() {
+        Set<Location> set = new TreeSet<>();
+        for (String t : data.keySet()) 
+          for (Location n : data.get(t).ref) 
+            set.add(n);
+        String s = str+"\t";
+        for (Location n : set) s += n.toCode36();
+        return s;
     }
 }
 
 class Lemma {  //reference list for each lemma
-    final static int M = 20;
+    final static int M = 99;
     String str;  int count = 0;
     boolean tooMany = false;
     List<Location> ref = new ArrayList<>();
@@ -48,11 +57,15 @@ class RootReader implements Runnable {
     Map<String,Root> map = new TreeMap<>(); //roots
 
     public static final String
-        PKG = "root",  //all files are in this folder
+        PKG = "qwork",  //all files are in this folder
         IN = "quranic-corpus-morphology-0.4.txt", 
         IN0 = "bes-sure.txt", 
-        OUT = "Roots.txt", DAT = "data4.txt"; 
+        OUT = "Roots.txt", DAT = "data.txt"; 
         
+    public static String toArabic(String s) {
+        ArabicText at = ArabicText.fromBuckwalter(s);
+        return at.removeDiacritics().toString();
+    }
     public int parse(String s) {
         String[] a = s.split(":|\\t|\\(|\\)|\\|");
         if (a.length < 13) return -1;
@@ -61,15 +74,15 @@ class RootReader implements Runnable {
             if (a[i].equals("LEM")) lem = a[i+1];
             if (a[i].equals("ROOT")) root = a[i+1];
         }
-        if (lem == null) return -1;
-        ArabicText at = ArabicText.fromBuckwalter(lem);
-        lem = at.removeDiacritics().toString();
+        if (root == null || lem == null) return -1;
+        root = toArabic(root);
+        lem = toArabic(lem);
         int c = Integer.parseInt(a[1]);
         int v = Integer.parseInt(a[2]);
         int k = Integer.parseInt(a[3]);
         Location p = new Location(c, v);
-        if (root == null) return -1;
-        if (root.charAt(0) != 'S') return 0; //start with Sad
+        //start with Sad
+        //if (root.charAt(0) != 'S') return 0; 
         //System.out.println(p+" "+root+" "+lem);
         Root x = map.get(root);
         if (x == null) {
@@ -81,17 +94,16 @@ class RootReader implements Runnable {
             y = new Lemma(lem);
             x.data.put(lem, y);
         }
-        y.addLoc(p); x.count++;
+        y.addLoc(p); x.numRef++;
         return 0;
     }
-    public Set<String> writeOUT() throws IOException {
+    public void writeOUT() throws IOException {
         File f = new File(PKG, OUT);
         PrintWriter out = new PrintWriter(f);
-        Set<String> set = new TreeSet<>();
         int single = 0, tooMany = 0, n = 0;
         for (String k : map.keySet()) {
             Root x = map.get(k);
-            if (x.count == 1) {
+            if (x.numRef == 1) {
                 single++; continue;
             }
             out.println(x); n++;
@@ -100,8 +112,6 @@ class RootReader implements Runnable {
                 if (y.tooMany) {
                     tooMany++; continue;
                 }
-                if (y.ref.size() == 1) continue;
-                set.add(y.toCode36());
                 out.println(y); n++;
             }
         }
@@ -110,7 +120,26 @@ class RootReader implements Runnable {
         System.out.println(map.size()+" roots");
         System.out.println(single+" singletons");
         System.out.println(tooMany+" large ref");
-        return set;
+    }
+    public void writeDAT() throws IOException {
+        PrintWriter out = new PrintWriter(DAT);
+        int n = 0;
+        for (String k : map.keySet()) {
+            Root x = map.get(k);
+            if (x.numRef == 1) continue;
+            if (x.numRef < 25) { //combine all words 
+                out.println(x.toCode36()); n++;
+            } else {
+              out.println(x.str); n++;
+              for (String t : x.data.keySet()) {
+                Lemma y = x.data.get(t);
+                if (y.tooMany) continue;
+                out.println(y.toCode36()); n++;
+              }
+            }
+        }
+        out.close();
+        System.out.println(n+" lines in "+DAT);
     }
     public void run() {
       String[] text = {};
@@ -126,11 +155,7 @@ class RootReader implements Runnable {
       System.out.println("Lines: "+text.length);
       for (String s: text) parse(s); //takes time
       try {
-        Set<String> set = writeOUT();
-        PrintWriter out = new PrintWriter(DAT);
-        for (String t : set) out.println(t);
-        out.close();
-        System.out.println(set.size()+" lines in "+DAT);
+        writeOUT(); writeDAT();
       } catch(IOException e) {
         System.out.println(e); 
       }
@@ -148,5 +173,10 @@ class RootReader implements Runnable {
    687 tokens with no roots
 
 4657 lemmas with roots
-1642 roots OUT
+
+5074 lines in Roots.txt
+1652 roots
+398 singletons
+77 large ref
+3025 lines in data.txt
 */

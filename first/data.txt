@@ -1,0 +1,12 @@
+﻿Secde ۩
+175, 250, 271, 292, 308, 333, 364, 378, 415, 453, 479, 527, 589, 597
+A'raf 206;Ra'd 15;Nahl 49;Isra 109;Meryem 58;Hacc 18;Furkan 60;Neml 25;Secde 15;Sad 24;Fussilet 37;Necm 62;Inşikak 21;Alak 19
+Adem
+5, 53, 56, 111, 150, 151, 152, 153, 172, 287, 288, 298, 308, 319, 443
+Bakara 31, 33, 34, 35, 37;Al-i Imrân 33;Al-i Imrân 59;Maide 27;A'raf 11;A'raf 19;A'raf 26, 27;A'raf 31, 35;A'raf 172;Isra 61;Isra 70;Kehf 50;Meryem 58;Taha 115, 116, 117, 120, 121;Yasin 60
+Ismail
+18, 19, 20, 60, 103, 137, 259, 308, 328, 455
+Bakara 125;Bakara 127, 133;Bakara 136, 140;Al-i Imrân 84;Nisa 163;Enam 86;Ibrahim 39;Meryem 54;Enbiya 85;Sad 48
+Ruya
+235, 239, 246, 287, 449, 513
+Yusuf 5;Yusuf 43, 43;Yusuf 100;Isra 60;Saffat 105;Feth 27
