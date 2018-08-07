@@ -25,7 +25,7 @@ class Root {  //lemmas within each root
         for (String t : data.keySet()) 
           for (Location n : data.get(t).ref) 
             set.add(n);
-        String s = str+"\t";
+        String s = str+"=";
         for (Location n : set) s += n.toCode36();
         return s;
     }
