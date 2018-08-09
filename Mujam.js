@@ -1,5 +1,5 @@
 "use strict";
-const sajda;  //global array
+var sajda;  //global array
 const letterToRoots = new Map();
 const rootToWords = new Map();
 const wordToRefs = new Map();

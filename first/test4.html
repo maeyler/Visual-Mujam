@@ -52,9 +52,8 @@ function report(t) {
 }
 function readData() {
     showMessage("Reading data");
-    const site = "https://maeyler.github.io/Visual-Mujam/";
-    const url = site+"data4.txt";
-    fetch(url)
+    const site = "https://maeyler.github.io/Visual-Mujam/first/";
+    fetch(site+"data4.txt")
       .then(r => r.text())  //response
       .then(t => report(t));  //text
 }

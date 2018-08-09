@@ -36,15 +36,14 @@ function report(t) {
 }
 function readData() {
     showMessage("Reading data");
-    const site = "https://maeyler.github.io/Visual-Mujam/";
-    const url = site+"data.txt";
-    fetch(url)
+    const site = "https://maeyler.github.io/Visual-Mujam/first/";
+    fetch(site+"data.txt")
       .then(r => r.text())  //response
       .then(t => report(t));  //text
 }
 function makeMenu(m, a) {
-    var text = "";
-    for (var i = 0; i < a.length; i++) 
+    var text = "<option selected>"+a[0];
+    for (var i = 1; i < a.length; i++) 
         text += "<option>"+a[i];
     m.innerHTML = text;
 }

@@ -35,9 +35,7 @@ function report(t) {
 }
 function readData() {
     show("FT");
-    const url 
-= "https://raw.githubusercontent.com/maeyler/Visual-Mujam/master/data.txt";
-    fetch(url)
+    fetch("https://maeyler.github.io/Visual-Mujam/first/data.txt")
       .then(r => r.text())  //response
       .then(t => report(t));  //text
 }
