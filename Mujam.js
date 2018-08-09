@@ -1,14 +1,15 @@
 "use strict";
+const VERSION = "V0.3";
 var sajda;  //global array
 const letterToRoots = new Map();
 const rootToWords = new Map();
 const wordToRefs = new Map();
 //const wordToRoot = new Map();
 
-function parseRefs(refs) {
+function parseRefs(str) {
     let page = [], refA = [], prev = -1;
-    for (let j=0; j<refs.length; j+=3) {
-        let code = refs.substring(j, j+3);
+    for (let j=0; j<str.length; j+=3) {
+        let code = str.substring(j, j+3);
         let idx = decode36(code);
         let [c, v] = toCV(idx);
         let cv = c+":"+v;
@@ -53,31 +54,26 @@ function report2(t) {
     let i = 0; 
     while (i < m) {
       let root = line[i]; words = [];
-      let k = root.indexOf("=");
-      if (k > 0) {
-        root = addRefs(root, k); i++;
-      } else {
-        let j = i+1;
-        while (j < m) {
+      let j = i+1;
+      while (j < m) {
           let word = line[j];
           let k = word.indexOf("\t");
           if (k <= 0) break; 
           else word = addRefs(word, k);
           //wordToRoot.set(word, root); 
           j++;
-        }
-        i = j; words.sort();
       }
+      i = j; words.sort();
       let ch = root[0];
-      if (ch == "ء") continue; //skip hamza
+      //if (ch == "ء") continue; //skip hamza
       let x = letterToRoots.get(ch);
       if (x) x.push(root);
       else letterToRoots.set(ch, [root]);
       rootToWords.set(root, words);
     }
     let keys = [...letterToRoots.keys()];
-    makeMenu(menu1, keys.sort()); 
-    selectLetter();  //selectWord("سجد");
+    makeMenu(menu1, keys.sort());
+    selectLetter("س"); selectRoot("سجد 92");
 }
 function readData() {
     out.innerText = "Reading data";
@@ -92,12 +88,14 @@ function makeMenu(m, a) {
 }
 function selectLetter(ch) {
     if (!ch) ch = menu1.value;
+    else menu1.value = ch; 
     //console.log("selectLetter: "+ch);
     makeMenu(menu2, letterToRoots.get(ch)); 
     selectRoot();
 }
 function selectRoot(root) {
     if (!root) root = menu2.value;
+    else menu2.value = root;
     //console.log("selectRoot: "+root);
     let words = rootToWords.get(root);
     //menu3.disabled = (words.length == 1);
@@ -106,16 +104,20 @@ function selectRoot(root) {
 }
 function selectWord(word) {
     if (!word) word = menu3.value;
+    //else menu3.value = word;
     //console.log("selectWord: "+word);
     makeTable(word);
 }
 function makeTable(word) {
+    displayRef(word, wordToRefs.get(word));
+}
+function displayRef(word, str) {
   function threeDigits(k) {
     let s = ""+k; 
     while (s.length < 3) s = "0"+s;
     return s;
   }
-    let [page, ref] = parseRefs(wordToRefs.get(word));
+    let [page, ref] = parseRefs(str);
     const m=30, n=20;
     let row = "<th>Juzz</th><th>Page</th>";
     for (let j = 1; j <= n; j++) {
@@ -151,7 +153,9 @@ function makeTable(word) {
     }
     tablo.innerHTML = text;
     document.title = TITLE+" -- "+word;
+    menu3.value = word;
     text = " "+nc+" instances on "+ref.length+" pages"
+    if (nc == 0) text = "(too many verses -- not shown)"
     out.innerText = text; console.log(word, text); 
     //window.location.hash = "#"+word;
 }
