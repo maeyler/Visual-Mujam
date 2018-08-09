@@ -18,9 +18,9 @@ class Root {  //lemmas within each root
     Map<String,Lemma> data = new TreeMap<>();
     public Root(String s) { str = s; }
     public String toString() {
-        return str+" "+data.size()+" "+numRef;
+        return str+" "+numRef;
     }
-    public String toCode36() {
+    public String toCode36() { //not used
         Set<Location> set = new TreeSet<>();
         for (String t : data.keySet()) 
           for (Location n : data.get(t).ref) 
@@ -46,7 +46,8 @@ class Lemma {  //reference list for each lemma
         return str+" "+(tooMany? count : ref);
     }
     public String toCode36() {
-        String s = str+"\t";
+        String s = str+" "+count+"\t";
+        if (tooMany) return s;
         for (Location n : ref) s += n.toCode36();
         return s;
     }
@@ -104,13 +105,13 @@ class RootReader implements Runnable {
         for (String k : map.keySet()) {
             Root x = map.get(k);
             if (x.numRef == 1) {
-                single++; continue;
+                single++; //continue;
             }
             out.println(x); n++;
             for (String t : x.data.keySet()) {
                 Lemma y = x.data.get(t);
                 if (y.tooMany) {
-                    tooMany++; continue;
+                    tooMany++; //continue;
                 }
                 out.println(y); n++;
             }
@@ -126,16 +127,12 @@ class RootReader implements Runnable {
         int n = 0;
         for (String k : map.keySet()) {
             Root x = map.get(k);
-            if (x.numRef == 1) continue;
-            if (x.numRef < 25) { //combine all words 
-                out.println(x.toCode36()); n++;
-            } else {
-              out.println(x.str); n++;
-              for (String t : x.data.keySet()) {
+            //if (x.numRef == 1) continue;
+            out.println(x.str+" "+x.numRef); n++;
+            for (String t : x.data.keySet()) {
                 Lemma y = x.data.get(t);
-                if (y.tooMany) continue;
+                //if (y.tooMany) continue;
                 out.println(y.toCode36()); n++;
-              }
             }
         }
         out.close();
@@ -174,9 +171,9 @@ class RootReader implements Runnable {
 
 4657 lemmas with roots
 
-5074 lines in Roots.txt
+5947 lines in Roots.txt
 1652 roots
 398 singletons
 77 large ref
-3025 lines in data.txt
+5947 lines in data.txt
 */

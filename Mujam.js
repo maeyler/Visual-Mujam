@@ -1,12 +1,13 @@
 "use strict";
-var sajda;  //global array
-var letterToRoots = new Map();
-var rootToWords = new Map();
-var wordToRefs = new Map();
-var wordToRoot = new Map();
+const sajda;  //global array
+const letterToRoots = new Map();
+const rootToWords = new Map();
+const wordToRefs = new Map();
+//const wordToRoot = new Map();
+
 function parseRefs(refs) {
     let page = [], refA = [], prev = -1;
-    for (var j=0; j<refs.length; j+=3) {
+    for (let j=0; j<refs.length; j+=3) {
         let code = refs.substring(j, j+3);
         let idx = decode36(code);
         let [c, v] = toCV(idx);
@@ -62,7 +63,8 @@ function report2(t) {
           let k = word.indexOf("\t");
           if (k <= 0) break; 
           else word = addRefs(word, k);
-          wordToRoot.set(word, root); j++;
+          //wordToRoot.set(word, root); 
+          j++;
         }
         i = j; words.sort();
       }
