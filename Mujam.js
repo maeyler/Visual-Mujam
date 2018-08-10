@@ -1,5 +1,5 @@
 "use strict";
-const VERSION = "V0.3";
+const VERSION = "V1.0";
 var sajda;  //global array
 const letterToRoots = new Map();
 const rootToWords = new Map();
@@ -99,7 +99,7 @@ function selectRoot(root) {
     //console.log("selectRoot: "+root);
     let words = rootToWords.get(root);
     //menu3.disabled = (words.length == 1);
-    menu3.style.color= (words.length == 1? "lightgray" : "");
+    menu3.style.color= (words.length == 1? "gray" : "");
     makeMenu(menu3, words); selectWord();
 }
 function selectWord(word) {
@@ -156,11 +156,11 @@ function displayRef(word, str) {
     menu3.value = word;
     text = " "+nc+" instances on "+ref.length+" pages"
     if (nc == 0) text = "(too many verses -- not shown)"
-    out.innerText = text; console.log(word, text); 
+    out.innerText = text; console.log(text); 
     //window.location.hash = "#"+word;
 }
-function doClick(e) {
-    if (e == undefined) e = window.event;
+function doClick1(e) {
+    if (!e) e = window.event;
     let t = e.target;
     if (t.tagName.toLowerCase() != "td")
         t = t.parentElement;
@@ -169,6 +169,13 @@ function doClick(e) {
     let r = t.parentElement.rowIndex;
     let p = (20*(r-1)+t.cellIndex-1);
     console.log("click on p"+p);
-    window.open(REF+p, "Test", "resizable,scrollbars", true);
+    window.open(REF+p, "text", "resizable,scrollbars", true);
+}
+function doClick2(t) {
+    const REF = "http://corpus.quran.com/qurandictionary.jsp";
+    let p = "", v = menu2.value;
+    if (v) p = "?q="+toBuckwalter(v.split(" ")[0]);
+    console.log("click on p"+p);
+    window.open(REF+p, "corpus", "resizable,scrollbars", true);
 }
 

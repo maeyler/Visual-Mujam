@@ -1,4 +1,16 @@
 "use strict";
+const aaa = "ابتثجحخدذرزسشصضطظعغفقكلمنهويی";
+const bbb = "AbtvjHxd*rzs$SDTZEgfqklmnhwyY";
+const toBuck = new Map();
+for (let i=0; i<29; i++) toBuck.set(aaa[i], bbb[i]);
+function toBuckwalter(s) {
+    let b = "";
+    for (let i=0; i<s.length; i++) {
+        let c = toBuck.get(s[i]);
+        b += (c? c : s[i]);
+    }
+    return b;
+}
 const BASE = 80, MIN = 7680, MAX = MIN+BASE-1;
 function encode36(n) {
     n += 36*36;
