@@ -7,7 +7,8 @@ function toBuckwalter(s) {
     let b = "";
     for (let i=0; i<s.length; i++) {
         let c = toBuck.get(s[i]);
-        b += (c? c : s[i]);
+        if (!c) break;
+        b += c;
     }
     return b;
 }

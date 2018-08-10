@@ -1,5 +1,5 @@
 "use strict";
-const VERSION = "V1.0";
+const VERSION = "V1.1";
 var sajda;  //global array
 const letterToRoots = new Map();
 const rootToWords = new Map();
@@ -42,38 +42,34 @@ function report1(t) {
     selectWord();
 }
 function report2(t) {
-  let words = [];
-  function addRefs(s, k) {
-    let w = s.substring(0, k); words.push(w);
-    wordToRefs.set(w, s.substring(k+1));
-    return w;
+  function convert(s) { //should be done in data.txt
+    const EM_SPACE = String.fromCharCode(8195);
+    return s.replace(" ", EM_SPACE); 
   }
     wordToRefs.clear();
     let line = t.split("\n"), m = line.length-1;
     console.log(t.length+" chars "+m+" lines");
     let i = 0; 
     while (i < m) {
-      let root = line[i]; words = [];
-      let j = i+1;
+      let root = convert(line[i]);
+      let j = i+1, list = [];
       while (j < m) {
-          let word = line[j];
-          let k = word.indexOf("\t");
+          let s = line[j], k = s.indexOf("\t");
           if (k <= 0) break; 
-          else word = addRefs(word, k);
-          //wordToRoot.set(word, root); 
-          j++;
+          let word = convert(s.substring(0, k));
+          wordToRefs.set(word, s.substring(k+1));
+          list.push(word); j++;
       }
-      i = j; words.sort();
+      i = j; list.sort();
       let ch = root[0];
-      //if (ch == "ء") continue; //skip hamza
       let x = letterToRoots.get(ch);
       if (x) x.push(root);
       else letterToRoots.set(ch, [root]);
-      rootToWords.set(root, words);
+      rootToWords.set(root, list);
     }
     let keys = [...letterToRoots.keys()];
     makeMenu(menu1, keys.sort());
-    selectLetter("س"); selectRoot("سجد 92");
+    selectLetter("س"); selectRoot(convert("سجد 92"));
 }
 function readData() {
     out.innerText = "Reading data";
@@ -89,14 +85,12 @@ function makeMenu(m, a) {
 function selectLetter(ch) {
     if (!ch) ch = menu1.value;
     else menu1.value = ch; 
-    //console.log("selectLetter: "+ch);
     makeMenu(menu2, letterToRoots.get(ch)); 
     selectRoot();
 }
 function selectRoot(root) {
     if (!root) root = menu2.value;
     else menu2.value = root;
-    //console.log("selectRoot: "+root);
     let words = rootToWords.get(root);
     //menu3.disabled = (words.length == 1);
     menu3.style.color= (words.length == 1? "gray" : "");
@@ -104,8 +98,7 @@ function selectRoot(root) {
 }
 function selectWord(word) {
     if (!word) word = menu3.value;
-    //else menu3.value = word;
-    //console.log("selectWord: "+word);
+    else menu3.value = word;
     makeTable(word);
 }
 function makeTable(word) {
@@ -153,10 +146,11 @@ function displayRef(word, str) {
     }
     tablo.innerHTML = text;
     document.title = TITLE+" -- "+word;
-    menu3.value = word;
-    text = " "+nc+" instances on "+ref.length+" pages"
-    if (nc == 0) text = "(too many verses -- not shown)"
-    out.innerText = text; console.log(text); 
+    let t1 = "on "+ref.length+" pages";
+    if (nc == 0) 
+        out.innerText = "(too many verses)";
+    else out.innerText = nc+" instances "+t1;
+    console.log(word, t1); 
     //window.location.hash = "#"+word;
 }
 function doClick1(e) {
@@ -174,7 +168,7 @@ function doClick1(e) {
 function doClick2(t) {
     const REF = "http://corpus.quran.com/qurandictionary.jsp";
     let p = "", v = menu2.value;
-    if (v) p = "?q="+toBuckwalter(v.split(" ")[0]);
+    if (v) p = "?q="+toBuckwalter(v);  //.split(" ")[0]);
     console.log("click on p"+p);
     window.open(REF+p, "corpus", "resizable,scrollbars", true);
 }
