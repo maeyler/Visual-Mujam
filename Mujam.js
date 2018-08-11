@@ -1,17 +1,21 @@
 "use strict";
-const VERSION = "V1.1";
+const VERSION = "V1.2";
 var sajda;  //global array
+const MAX_REF = 150;
 const letterToRoots = new Map();
 const rootToWords = new Map();
 const wordToRefs = new Map();
-//const wordToRoot = new Map();
 
-function parseRefs(str) {
-    let page = [], refA = [], prev = -1;
+function addIndexes(str, indA) {
     for (let j=0; j<str.length; j+=3) {
         let code = str.substring(j, j+3);
-        let idx = decode36(code);
-        let [c, v] = toCV(idx);
+        indA.push(decode36(code));
+    }
+}
+function indexToArray(indA) {
+    let page = [], refA = [], prev = -1;
+    for (let i of indA) {
+        let [c, v] = toCV(i);
         let cv = c+":"+v;
         let p = pageOf(c, v);
         if (prev == p)
@@ -21,6 +25,10 @@ function parseRefs(str) {
     }
     page.push(999); //999 is sentinel
     return [page, refA];
+}
+function parseRefs(str) {
+    let indA = []; addIndexes(str, indA);
+    return indexToArray(indA)
 }
 function report1(t) {
     let line = t.split("\n"), m = line.length-1;
@@ -79,8 +87,9 @@ function readData() {
       .then(r => r.text())  //response
       .then(t => report2(t));  //text
 }
-function makeMenu(m, a) {
-    m.innerHTML = "<option selected>"+a.join("<option>");
+function makeMenu(m, a) { //first item is selected
+    let OPT = "<option selected>";
+    m.innerHTML = OPT+a.join("<option>");
 }
 function selectLetter(ch) {
     if (!ch) ch = menu1.value;
@@ -91,26 +100,41 @@ function selectLetter(ch) {
 function selectRoot(root) {
     if (!root) root = menu2.value;
     else menu2.value = root;
-    let words = rootToWords.get(root);
-    //menu3.disabled = (words.length == 1);
-    menu3.style.color= (words.length == 1? "gray" : "");
-    makeMenu(menu3, words); selectWord();
+    let list = rootToWords.get(root);
+    //menu3.disabled = (list.length == 1);
+    menu3.style.color= (list.length == 1? "gray" : "");
+    makeMenu(menu3, list);
+    menu3.selectedIndex=-1; //do not select Word
+    //combine refs in list
+    combine.hidden = true; let indA = [];
+    for (let j=0; j<list.length; j++) {
+        let str = wordToRefs.get(list[j]);
+        let n = str.length/3;
+        if (n == 0 || n > MAX_REF) 
+            menu3.children[j].disabled = true;
+        else addIndexes(str, indA);
+    }
+    indA.sort((a, b) => (a-b));
+    let [page, refs] = indexToArray(indA);
+    displayRef(root, page, refs);
 }
 function selectWord(word) {
     if (!word) word = menu3.value;
     else menu3.value = word;
+    combine.hidden = false;
     makeTable(word);
 }
 function makeTable(word) {
-    displayRef(word, wordToRefs.get(word));
+    let str = wordToRefs.get(word);
+    let [page, refA] = parseRefs(str);
+    displayRef(word, page, refA);
 }
-function displayRef(word, str) {
+function displayRef(word, page, refA) {
   function threeDigits(k) {
     let s = ""+k; 
     while (s.length < 3) s = "0"+s;
     return s;
   }
-    let [page, ref] = parseRefs(str);
     const m=30, n=20;
     let row = "<th>Juzz</th><th>Page</th>";
     for (let j = 1; j <= n; j++) {
@@ -128,11 +152,11 @@ function displayRef(word, str) {
             pn++; //page number
             let s1 = "", s2 = ""; //s1 is visible, s2 is hidden
             if (pn == page[p]) {
-                let c = ref[p].split(" ").length;
+                let c = refA[p].split(" ").length;
                 s1 = " "+c;
-                let k = ref[p].indexOf(":");
-                k = (k<0? 0 : Number(ref[p].substring(0, k)));
-                s2 = "<span class='t2'>"+sName[k]+" "+ref[p]+"</span>";
+                let k = refA[p].indexOf(":");
+                k = (k<0? 0 : Number(refA[p].substring(0, k)));
+                s2 = "<span class='t2'>"+sName[k]+" "+refA[p]+"</span>";
                 p++; nc += c;
             } else {
                 s2 = "<span class='t1'>"+pLabel[pn]+"</span>";
@@ -146,16 +170,15 @@ function displayRef(word, str) {
     }
     tablo.innerHTML = text;
     document.title = TITLE+" -- "+word;
-    let t1 = "on "+ref.length+" pages";
+    let t1 = "on "+refA.length+" pages";
     if (nc == 0) 
         out.innerText = "(too many verses)";
     else out.innerText = nc+" instances "+t1;
     console.log(word, t1); 
     //window.location.hash = "#"+word;
 }
-function doClick1(e) {
-    if (!e) e = window.event;
-    let t = e.target;
+function doClick1() {
+    let t = window.event.target;
     if (t.tagName.toLowerCase() != "td")
         t = t.parentElement;
     if (t.tagName.toLowerCase() != "td") return;
@@ -165,11 +188,11 @@ function doClick1(e) {
     console.log("click on p"+p);
     window.open(REF+p, "text", "resizable,scrollbars", true);
 }
-function doClick2(t) {
+function doClick2() {
     const REF = "http://corpus.quran.com/qurandictionary.jsp";
     let p = "", v = menu2.value;
-    if (v) p = "?q="+toBuckwalter(v);  //.split(" ")[0]);
-    console.log("click on p"+p);
+    if (v) p = "?q="+toBuckwalter(v);
+    console.log("corpus"+p);
     window.open(REF+p, "corpus", "resizable,scrollbars", true);
 }
 

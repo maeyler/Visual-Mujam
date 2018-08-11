@@ -32,7 +32,7 @@ class Root {  //lemmas within each root
 }
 
 class Lemma {  //reference list for each lemma
-    final static int M = 99;
+    final static int M = 150;
     String str;  int count = 0;
     boolean tooMany = false;
     List<Location> ref = new ArrayList<>();
@@ -63,9 +63,10 @@ class RootReader implements Runnable {
         IN0 = "bes-sure.txt", 
         OUT = "Roots.txt", DAT = "data.txt"; 
         
-    public static String toArabic(String s) {
+    public static String toArabic(String s, boolean vowels) {
         ArabicText at = ArabicText.fromBuckwalter(s);
-        return at.removeDiacritics().toString();
+        if (!vowels) at = at.removeDiacritics();
+        return at.toString();
     }
     public int parse(String s) {
         String[] a = s.split(":|\\t|\\(|\\)|\\|");
@@ -76,8 +77,8 @@ class RootReader implements Runnable {
             if (a[i].equals("ROOT")) root = a[i+1];
         }
         if (root == null || lem == null) return -1;
-        root = toArabic(root);
-        lem = toArabic(lem);
+        root = toArabic(root, false);
+        lem = toArabic(lem, true);
         int c = Integer.parseInt(a[1]);
         int v = Integer.parseInt(a[2]);
         int k = Integer.parseInt(a[3]);
@@ -171,9 +172,9 @@ class RootReader implements Runnable {
 
 4657 lemmas with roots
 
-5947 lines in Roots.txt
+6318 lines in Roots.txt
 1652 roots
 398 singletons
-77 large ref
-5947 lines in data.txt
+43 large ref
+6318 lines in data.txt
 */

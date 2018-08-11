@@ -65,14 +65,15 @@
 
 <p><select id=menu1 onChange="selectLetter()"></select> &nbsp;
    Root: <select id=menu2 onChange="selectRoot()"></select> &nbsp;
-   Word: <select id=menu3 onChange="selectWord()"></select> &nbsp;
-   <span id=out>output will be here</span>
+   <span id=out>output will be here</span> &emsp;
+   <select id=menu3 onChange="selectWord()"></select> &nbsp;
+   <button id=combine onClick="selectRoot()">Combine</button>
 </p>
 
 <table id="tablo" onClick="doClick1()"></table>
 
 <p><span id=versi></span>
-<span id=corpus onClick="doClick2(this)">Data Source</span>
+<span id=corpus onClick="doClick2()">Data Source</span>
 <!--a href="http://corpus.quran.com/qurandictionary.jsp"></a-->
 </p>
 
