@@ -32,7 +32,7 @@ class Root {  //lemmas within each root
 }
 
 class Lemma {  //reference list for each lemma
-    final static int M = 150;
+    final static int M = 200;
     String str;  int count = 0;
     boolean tooMany = false;
     List<Location> ref = new ArrayList<>();
@@ -76,8 +76,12 @@ class RootReader implements Runnable {
             if (a[i].equals("LEM")) lem = a[i+1];
             if (a[i].equals("ROOT")) root = a[i+1];
         }
-        if (root == null || lem == null) return -1;
-        root = toArabic(root, false);
+        if (lem == null) return -1;
+        if (root == null) {
+            if (s.indexOf("POS:PN") < 0) return -1;
+            root = lem;  //proper noun
+        }
+        root = toArabic(root, false); 
         lem = toArabic(lem, true);
         int c = Integer.parseInt(a[1]);
         int v = Integer.parseInt(a[2]);
@@ -172,9 +176,10 @@ class RootReader implements Runnable {
 
 4657 lemmas with roots
 
-6318 lines in Roots.txt
-1652 roots
-398 singletons
-43 large ref
-6318 lines in data.txt
+6468 lines in Roots.txt
+1725 roots = 1652+77-4
+424 singletons = 398+30-4
+30 large ref
+6468 lines in data.txt
+4 proper nouns are added to other roots
 */

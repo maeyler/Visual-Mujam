@@ -2,11 +2,15 @@
 أَبّ 1	5gt
 ابد 28
 أَبَدًا 28	12u1fa1h31ie1j91lw1yx20m20n21321b2nj2o02of2p135n3603643rm3ry4jn4yp4z650050o51857y5qi
+ابراهيم 69
+إِبْرَاهِيم 69	13n13o13o13p13q13t13v13w13y13z14317d17d17d17f19219y1a01a11ah1as1au1f71h61h61i81nz1o01o81qe20921h21h26u26z27027128i29e2dl2fh2k52k82rn2rs2s42ye2yn2yp2yw30t31a3293bd3l83ln3qc3zj40440943j4b14cv4mj4px4xp4z64z65lr
 ابق 1
 أَبَقَ 1	414
 ابل 3
 أَبَابِيل 1	5rz
 إِبِل 2	1px5m8
+ابليس 11
+إِبْلِيس 11	1151qt2ex2ey2m22ou2wg3c33sq44c44d
 ابو 117
 أَبٌ 46	1nz21h28g28g28k28k28l28n28s28t29z2a12a32a32a52a82ai2ak2ak2al2al2ax2ay2b12b42pq2ra2ro2ro2rp2rq2rr2yf3293be3bu3iz3j13j23r93zl4024cv4z65gx5sp
 أَبَوَان 7	1e01e01r928i2b32b42po
@@ -49,6 +53,8 @@
 احد 85
 أَحَد 74	12v13113113z15717l1841a61ah1ao1ce1e71ew1hx1ir1j51jc1lj1ls1nm1sq1yf1yh20n21u27628g29c29h2ai2fv2if2ix2l02nz2nz2o22o62oc2oi2om2or2ot2qi2r82t835035p36436b3lk3r13r83r93ut4394cm4kg4yp50e55657d57i57t57v57x5815n65n75ng5ni5ot5su5sx
 إِحْدَى 11	1811811e91wf1zr3j13j23j33uu4kd59m
+احمد 1
+أَحْمَد 1	4zl
 اخذ 273
 أَخَذَ 127	11j11q11y11y12i12j12s12s15x16k17a17f18g1ae1ae1dc1e91e91ea1ea1fo1g61g81gj1gj1gj1hy1hz1ix1iz1jq1kj1n31n51n71nv1rd1sj1so1t11t41t51t61u41ui1uj1uj1uo1us1ut1v31v71v71v71v91va1w11xo1y41y61yg1zp21621722k26p26s27j27r2ag2ai2aj2ak2cb2g32gd2i32i42jy2pn2qu2tt2ub2vu31b31f33e34134d35l3ds3du3ep3jg3l63lt3lw3lw3qc3qc3ru3tl3ue3wa43i46y46y47e47f49n4dh4fx4jq4ju4jv4mz4n34rs4ta4x74xe4yl54554p55458j5fd
 أَخْذ 6	1i627r27r4rs54558j
@@ -60,7 +66,7 @@
 اخر 250
 أَخَّرَ 15	1fu25527t2cw2ds2du2ii2m33ux50e50f56n56n5ak5i2
 آخَر 70	15b15c18118c18i1ce1g81gj1he1jc1jq1lj1lk1m31mg1pm1qh1rk1rl1xw21521521929c29h29j29m2gq2ks2kz2lg2ma2tq2tu2u92ur2xa32n33433f35i37f3973b83ba3e83fd3ks3u63zi41043c43w44x45w46m4fe4jw4kd4lc4na4p94pg4py4q74zs4zw51358n58n
-آخِر 155	
+آخِر 155	10b10f11x12l12t13113d13p13t15415r15s16816b16j16n17j18r19e19p1a51aa1ai1bb1c61c91cd1d11er1es1fc1fr1fu1hf1hh1i71iq1ji1jq1ki1lr1mt1oh1p21q31rr1ul1uu1v71y31yt1yu1z41zd1zd1zj1zk20820d21222623o25d25g25j27s29d29x2b52bd2c52cd2cp2dd2hf2hn2hy2ih2js2ju2k72kk2kn2kw2ky2lm2md2n92wr30e30i33634b35l35x3623663bs3fu3fv3fw3hl3ka3kh3kn3lc3lj3ls3mk3mw3n53oh3qq3qy3rq3s73se3sr3ze40840j40t42h44z45g45z47w48049d49m4a14b84b84d44dp4pl4pn4up4vf4vo4x24xj4ye4yh4z84zf50z53c5a45as5cn5fd5lp5on5oz
 تَأَخَّرَ 3	15u4jd59o
 مُسْتَـْٔخِرِين 1	2eq
 يَسْتَأْخِرُ 6	1rg2392e72ii33g3t0
@@ -70,6 +76,10 @@
 إِخْوَةٌ 7	1e01il28h28j29y2b44ke
 ادد 1
 إِدّ 1	2sz
+ادريس 2
+إِدْرِيس 2	2s22zc
+ادم 25
+آدَم 25	11211411511611819219s1jc1qt1r11r81r91rd1rh1va2m22mb2ou2s42wf2wg2wh2wk2wl3wl
 ادي 6
 أَدَآء 1	155
 يُؤَدِّ 5	1821a81a81fb4f4
@@ -93,8 +103,11 @@
 أَرْض 461	
 ارك 5
 أَرَآئِك 5	2ob3wh5bo5j35jf
-ازر 2
+ارم 1
+إِرَم 1	5mo
+ازر 3
 أَزْر 1	2u3
+آزَر 1	1nz
 آزَرَ 1	4k4
 ازز 2
 أَزّ 1	2st
@@ -102,16 +115,22 @@
 ازف 3
 ءَازِفَة 2	47b4qh
 أَزِفَتِ 1	4qh
+اسحاق 17
+إِسْحَاق 17	13w13z1431ah1i81o926w26w28i29e2dp2rv2yz3lj40c40d43j
 اسر 6
 أَسِير 4	12k1y31y65bj
 أَسْر 1	5c3
 تَأْسِرُ 1	3qv
+اسراييل 43
+إِسْرَائِيل 43	11b11i12i13l16217119i1aq1aq1ix1jh1kj1kl1kr1ln1tf1u81ub1uc24e24e24h2kf2kh2n62n92s42uj2vg2vu39x3a23b33ex3hv3py48a4ds4fg4gp4hk4zl4zt
 اسس 3
 أَسَّسَ 3	21b21c21c
 اسف 5
 ءَاسَفُ 1	4do
 أَسَف 2	2ao2nm
 أَسِف 2	1uo2vm
+اسماعيل 12
+إِسْمَاعِيل 12	13o13q13w13z1431ah1i81ob2dp2s02zc43m
 اسن 1
 ءَاسِن 1	4io
 اسو 7
@@ -145,6 +164,8 @@
 مَّأْكُول 1	5s1
 الت 1
 أَلَتْ 1	4o4
+العزىا 1
+ٱلْعُزَّىٰ 1	4pf
 الف 22
 أَلَّفَ 5	1b01xz1xz1xz36q
 أَلْف 14	12v16y1bl1bm1wh1y11y21y231e3l63pg41b55f5q8
@@ -152,6 +173,8 @@
 مُؤَلَّفَة 1	1zz
 الل 2
 إِلّ 2	1yj1yl
+اللات 1
+ٱللَّٰت 1	4pf
 الم 75
 أَلِيم 72	10h13315115518q1aa1ao1d21dd1e71hj1i61ii1jl1km1l71nv1sj1x41ye1z91ze20020d20i20t22024c24l25n26927r2912d82fg2ik2jp2k22kn30s36237a38c3f13lf3ok3qd3sb3vf3ya4ad4b94bu4dy4ex4gh4gk4hy4i54jr4js4k04mw4xw4yt4zp50k52d56k58g5c65k4
 يَأْلَمُ 3	1gl1gl1gl
@@ -164,6 +187,10 @@
 يَأْتَلِ 1	365
 يَأْلُ 1	1bf
 يُؤْلُ 1	16h
+الياس 3
+إِلْيَاس 3	1oa40n40u
+اليسع 2
+ٱلْيَسَعَ 2	1ob43m
 امت 1
 أَمْت 1	2w7
 امد 4
@@ -172,7 +199,7 @@
 ءَامِرُون 1	21f
 أَمَرَ 77	10y11f12212312s14w16d17n18q1ad1ad1b11b71bb1eq1fb1fd1gv1h01h01lu1mb1nw1qg1qu1ra1ra1rb1tk1uj1uv1w11z620620a23w24s27c28129829g2a82c02c42cf2fv2go2i72ix2jb2kt2s12ww31836437038z3af3go3ia3ia3ou3t340245145246i48n4b34b34of4xn51f51f5gl5py5qf
 أَمَّارَة 1	29t
-أَمْر 166	
+أَمْر 166	13813g16116117u19g1b61bp1c81cd1cf1cf1cf1ck1db1f01fc1g01g01k11l81m51nj1qc1s01s01sn1uo1xe1xf1xg1xg1yz1zn1zn1zp21921z22k22r23v23v26126426526j26k26r26y27127727j27m27m27q28c28r28u28x29h2an2b62bh2bq2ca2d82di2fw2gu2gv2h52hq2iy2mq2nq2nw2o12o12o82ou2pd2ph2pq2pw2r32rh2rl2sa2ty2u42uy2vq2vt2xq2z02z82zk31831w31y32733033q37937a3dn3gn3gn3go3jk3mt3ne3nz3ou3oz3pg3pz3r53r53r63r73si3ts3x743a47848148p48z49i4bq4bv4c44c54ec4eq4er4gl4gq4gr4hz4iu4iz4kb4kd4kr4lz4n34qp4qy4s04x44xd4yt50k50y5105115125155165165195et5ig5q9
 إِمْر 1	2pf
 يَأْتَمِرُ 2	3iw513
 امل 2
@@ -207,6 +234,8 @@
 انث 30
 أُنثَىٰ 24	1551551951951dk1gy1h52bn2if2ji2lh3tz41e47x4ah4c14c24co4kh4ph4pn4q55ba5od
 أُنثَيَيْن 6	1e01il1pw1pw1px1px
+انجيل 12
+إِنجِيل 12	18819h19y1jv1jw1kf1kh1ln1uv21e4k44xq
 انس 97
 ءَانَسَ 5	1dv2ti3fy3j53j5
 إِنس 18	1p11ph1ph1pj1rk1vh2mt3g849v49z4hs4nf4t24t84tp4u757g57h
@@ -253,8 +282,12 @@
 أَيْيد 2	42r4n6
 ايم 1
 أَيَٰمَىٰ 1	36f
+ايوب 4
+أَيُّوب 4	1i81o92za43f
 ايي 382
 ءَايَة 382	
+بابل 1
+بَابِل 1	131
 بار 1
 بِئْر 1	31c
 باس 73
@@ -295,7 +328,8 @@
 بدا 15
 بَدَأَ 12	1rb1yo22022u22u2ag2zv3hj3lc3n03ng3pi
 يُبْدِئُ 3	3lb3tj5ki
-بدر 1
+بدر 2
+بَدْر 1	1bk
 بِدَار 1	1dv
 بدع 4
 بَدِيع 2	13g1oq
@@ -453,7 +487,7 @@
 بعد 228
 بَعُدَتْ 2	1zh27k
 بَعِيد 25	15318z1fd1gx1hh1ic27827e2cp2d430030f31k37n3gd3se3tm3tn4ae4am4b64kp4ld4lh55h
-بَعْد 192	
+بَعْد 192	10y11m11n11r11z12912a12m12r13813813j13w14814m14r15516016216416l17117817817e18d18o19u19y1ad1af1aj1am1an1ar1ax1b21b31cd1cf1cl1cx1e01e11e11e11ed1gw1hy1i81ia1ix1jh1jo1jq1js1l71lj1ll1m31nf1nt1nw1pm1s21sf1sk1sv1sz1ta1td1u31um1uo1ur1ur1v71vb1vn1yb1yn1z21z320520d21g21i21k21z22a22h22s23y23z25425728l29b29l29o29p2b42c42cv2d02hy2im2ir2jc2jd2jf2jr2jv2jv2k42k42ku2n92pk2s52vl2xa2yk2zw30832o33433f35o36g36u3723723753753843fr3g23jj3jy3kr3mj3ms3mt3n83nd3o33o43o73o73p43rl3rm3t23tq3tx3ut3vp43944q44w46y47o47r4ak4b24b24b44bg4bt4bw4ge4gf4gq4gw4i44iy4j54jz4kf4pm4x94xg4yo4zl50y51451d52s5dk5fi5qe
 بَٰعِدْ 1	3sp
 بُعْد 7	26526l26t27k33e33h4d7
 مُبْعَدُون 1	2zs
@@ -463,7 +497,7 @@
 بَعِير 2	2a52ac
 بعض 158
 بَعُوضَة 1	10x
-بَعْض 157	
+بَعْض 157	11711712812b12b12k12k14814817617617817817817e18218219319319j19x19x1cg1dk1dk1e81ea1ea1ee1ee1el1el1en1en1hv1hv1jy1jy1k01k01ne1ne1nq1nq1p11p11ph1ph1pi1pi1qb1qb1qi1qi1r61r61x91x91y81y81y91y91yb1yb20620620a20a21u21u23625926f28m2bj2bj2cf2cj2is2is2ky2ky2lw2lw2mt2mt2nz2q72q72wn2wn31731733h33h34s34s35e36n36n37537537937a37a37v37v3ey3hr3lh3lh3lh3lh3nu3qb3qb3t13t13tc3tc3us3us3xz3xz3ym3ym42w42w42y42y47l48y4d14d14d14d14dw4e04e04gs4gs4id4id4iz4k64k64kg4kg4kg4o84o851c51c51c539539553
 بعل 7
 بَعْل 6	16j1h926x36e36e36e
 بَعْل  1	40p
@@ -499,6 +533,8 @@
 بَقِيَّت 3	17327b285
 بَٰقِيَٰت 2	2oq2sm
 تُبْقِى 1	59f
+بكة 1
+بَكَّة 1	1at
 بكر 12
 إِبْكَٰر 2	19a48c
 بُكْرَة 7	2qt2s837g3rb4jk4ro5c0
@@ -608,12 +644,13 @@
 تَبَّرْ 2	2kk38e
 تَتْبِير 2	2kk38e
 مُتَبَّر 1	1ud
-تبع 172
+تبع 174
 أَتْبَعَ 15	17h1vd24e26l27o2ek2pt2px2q02ve33h3b43ji3xi5cn
 تَابِع 3	14814836e
 تَبَع 2	2d7484
 تَبِعَ 9	11914817i1a61r02dm2m444n5ev
 تَبِيع 1	2ma
+تُبَّع 2	4fn4l0
 مُتَتَابِعَيْن 2	1g94xw
 مُّتَّبَعُون 2	3aw4f9
 ٱتَّبَعَ 136	13113j13j14614814t14t14u14v14x14x15z18c18p19019m19o1a11as1cn1cs1cz1eg1g01gw1h61hg1j11jx1jy1kq1nb1nh1ov1p51pv1q11q31q61q61q81ql1ql1t01ug1uv1uv1uw1ve1vv1w51y01zh21321k22b22v22w23q23q24d24x25o26k27m28529e2bc2cg2du2f82fv2k82lo2o82pa2pe2rp2s52to2uj2vq2vt2w82wn2wy30634836436437j3ak3cj3ff3fo3jb3jn3jp3jq3jq3jx3l43ni3os3oy3oy3q73sq3v83vh3vi43045846947047v4b34du4gr4gr4hj4ic4ic4in4ip4j14jq4jq4o44pj4po4qp4ra4xq5745ap
@@ -665,6 +702,8 @@
 مَتَاب 2	2c939a
 تور 2
 تَارَة 2	2ma2ur
+تورىاة 18
+تَّوْرَىٰة 18	18819h19j19y1aq1aq1js1jt1jv1jv1kf1kh1ln1uv21e4k44zl4zy
 تين 1
 تِّين 1	5pf
 تيه 1
@@ -727,6 +766,8 @@
 ثَمَٰنِين 1	35n
 ثَمَٰنِيَة 4	1pw44w54254c
 ثُّمُن 1	1e1
+ثمود 26
+ثَمُود 26	1sj20926m26t26t27k2cv2m031938d3dd3h03lu42n47o49j49n4ky4n24qb4r953z5405kn5mq5o6
 ثني 29
 ثَانِى 2	1zf30c
 مَثْنَىٰ 3	1ds3tg3tp
@@ -751,12 +792,16 @@
 ثَيِّبَٰت 1	51e
 جار 3
 يَجْـَٔرُ 3	2ia341342
+جالوت 3
+جَالُوت 3	174175176
 جبب 2
 جُبّ 2	28m28r
 جبت 1
 جِبْت 1	1f4
 جبر 10
 جَبَّار 10	1j726k2d12qw2re3d23iv47s4lv4z1
+جبريل 3
+جِبْرِيل 3	12w12x51d
 جبل 41
 جَبَل 39	17f1sk1uh1uh1v92632642ca2dw2gc2ip2j22le2or2t02w52z630l36q3dl3i73s53sg3uf42s4nt4ug4yz54955k58h58h5cg5dr5e45fk5h75ma5r6
 جِبِلَّة 2	3ek3wn
@@ -942,6 +987,8 @@
 جَٰهِلِيَّة 1	1cf
 جَٰهِلِيَّة  3	1jz3r24k1
 يَجْهَلُ 5	1p01uc25q3ha4hx
+جهنم 77
+جَهَنَّم 77	15x18h1cn1dm1f81ga1ge1gw1h21hl1ie1r01rn1vh1wo1x81x91za1zo20220720c20k20y21c2882bx2d22df2f92hm2kl2kv2lg2m42n22q82qa2qe2se2sw2va2xs2zp3543893943ma3mo3po3uo3wo43u44n45m46e46p46q48648h48x4e74gj4jh4la4lg4nw4tc4y051i51r57q57y5e55kf5n45qg
 جوب 43
 أُجِيبَت 8	15d1lm24d2du3hh3k54i54i6
 جَابُ 1	5mq
@@ -950,6 +997,8 @@
 ٱسْتَجَابَ 28	15d1cx1dk1mx1vw1wh1ww25b29a2bt2bx2bx2d82lt2ow2z32zb2zf2zh3jq3k43u248h4b44be4bq4bz4hf
 جود 1
 جِيَاد 1	435
+جودى 1
+جُودِىّ 1	265
 جور 13
 جَار 3	1ep1ep1xk
 جَآئِر 1	2h2
@@ -1307,6 +1356,8 @@
 أَحْتَنِكَ 1	2m3
 حنن 1
 حَنَان 1	2qv
+حنين 1
+حُنَيْن 1	1z0
 حوب 1
 حُوب 1	1dr
 حوت 5
@@ -1583,7 +1634,7 @@
 ٱخْتِلَٰف 7	14r1df1fz22234h3nb4ge
 ٱسْتَخْلَفَ 5	1pm1u326i372372
 خلق 261
-خَلَقَ 184	
+خَلَقَ 184	10s11016j19g19i19s1dg1dq1dq1eh1j21j31ln1ly1lz1ny1oj1op1oq1qt1qu1qu1s01vj1vn1vr1vt1vt1zb21z2212222542882bv2d52di2es2et2ez2gf2gw2gx2gy2h12ha2ha2hd2hd2i52ir2j22m22mb2n42n42oh2os2qr2sd2tc2ur2xf2xw2y030832432l32n32n32n32q34s35g36s36s37d37e37e38o38t38y3bm3e23ek3hf3k83l93m03mh3mx3n93na3nt3o73o73on3oo3p23pf3pi3tz3us3vx3w33ww3x23x63x63xj3xj3zw41e43144d44e44e44u44v44w44w45s48o49f49l49r4a74c14ce4ce4ch4cl4ek4fo4fp4gv4hd4he4i74kh4l24lo4n84nf4oi4oj4q54rz4s84sj4sk4vw4vy4x350h50i51951n51o51z55u56e56x56y58y5b95bd5c35cq5ds5gg5gh5i45kw5kx5la5m85mp5nf5od5pi5pn5po5sz
 خَلَٰق 6	13115r1aa208208208
 خَلَّٰق 2	2gg3x6
 خَلْق 52	14r1df1dg1h01s01sf22022u22u2bk2bv2bv2d52lq2ls2n32ov2ov2um2zv32n32q3hj3lb3lc3n03nb3ng3nj3oo3p53pi3pl3sd3tp3u43wt3x33x43xj44w44w48e48e4bh4co4gd4i74l14l151o5ff
@@ -1652,7 +1703,7 @@
 خَابَ 4	2d12ux2wb5o5
 خَآئِبِين 1	1bo
 خير 196
-خَيْر 178	
+خَيْر 178	11p11w13213413513914l15715b15b15b15o15o16616616716b16c16c17i17o17q17r17r17s17z18k18v18z19n1b11b71b71bc1cb1ci1d31d51dn1e81ee1ez1fc1fj1fu1gv1h81h91hu1if1ig1lr1me1mt1ni1qb1qu1r81sv1sx1sz1ut1v71vq1wr1wv1x21y61y61ye1zg20020d21c22723i24v24x25s27927b29f29x29z2a42ak2bd2hn2hn2ix2jg2kb2ko2lc2og2ok2oo2oo2oq2oq2pp2q32sj2sm2sm2v92wv2xy2zg30e30x31331p32833234934935a35j35u35v36a36g37737l37q37z3gr3he3i83j03j23k03kk3ko3l83nr3qo3qu3t93yy43643l43m44e4aa4aj4bo4d14dl4dr4fn4hl4iu4k94kf4kf4lb4rt4y44zq50250450450v51e52r53b55w56g58n58n5lp5oz5q85qh5qp5qy
 خَيْرَٰت 10	14b1bb1jx20r2z02zh33t33y3uk4u3
 خِيَرَة 2	3k83r5
 يَتَخَيَّرُ 2	4uv53h
@@ -1670,6 +1721,8 @@
 دَأَب 1	29n
 دَأْب 4	18g1xo1xq47o
 دَآئِبَيْن 1	2dj
+داود 16
+دَاوُد 16	1761i81kr1o92lw2z52z63g63g73sg3sj42r42w42y430434
 دبب 18
 دَآبَّة 18	14r1mz1wu1xr25326h2i62ii30l36s3i13mg3on3sk3ug3ux4bh4gd
 دبر 44
@@ -1737,7 +1790,7 @@
 يَدُعُّ 2	4nw5s7
 دعو 212
 دَاعِى 4	2w83rf4i54i6
-دَعَا 170	
+دَعَا 170	10u11w12312412515d16c16c17f18118s19719u1b11ce1gy1gy1n11n21n21nd1nh1no1nw1nw1ox1rb1rj1s11s21u81vi1vr1vv1vv1vw1vw1vx1vz1w01ww22822822i22l22y23q24u25a26n27q2992bc2bt2cf2cv2cw2d82hd2j72ka2ko2lt2lx2ly2m82mc2nf2nf2nf2nu2o82ow2p12ru2ru2t12zh30f30g31t31y32434a35i36v36y37o37p37p3973bg3fd3hh3j13jh3k43k43kr3ks3ly3ml3ne3nm3oy3p73p93pr3qa3rm3ss3tu3u13u23u63us40p43p44y44y45s46347347547747d47j47y47y47z47z48048648748h48m48n48v49b4a34ai4b14b34di4ej4f84g54h14he4hf4j84jb4jr4ob4qs4qw4x74zm53l53m55s56o56q56r57t57u57v5jr5q35q4
 دَعْوَة 6	15d24d2bt2du3ne480
 دَعْوَىٰ 4	1qn2262262xe
 دُعَآء 22	14y1972bt2dp2dq2ko2qm2ru2y837a37a39g3hz3o53q93r63u24874aj4al4hf56p
@@ -2184,6 +2237,8 @@
 رَمَاد 1	2d4
 رمز 1
 رَمْز 1	19a
+رمضان 1
+رَمَضَان 1	15c
 رمم 2
 رَمِيم 2	3x34n1
 رمن 3
@@ -2229,6 +2284,8 @@
 رَّوْع 1	26z
 روغ 3
 رَاغَ 3	3zr3zt4ml
+روم 1
+رُّوم 1	3mr
 ريب 36
 رَيْب 18	10910u18e18u1g41m91zk22x2n42o130830a3pd48g4av4gz4h54od
 رِيبَة 1	21d
@@ -2286,6 +2343,8 @@
 يَزِفُّ 1	3zu
 زقم 3
 زَقُّوم 3	3yy4ft4vr
+زكريا 7
+زَكَرِيَّا 7	1961961971oa2qk2qp2zg
 زكو 59
 أَزْكَىٰ 4	16n2nz36b36d
 تَزَكَّىٰ 8	2vc3u63u65f65g15g55lm5os
@@ -2349,8 +2408,9 @@
 زَيْت 1	36i
 زَيْتُونَة 1	36i
 زَّيْتُون 5	1oo1pu2h45gr5pf
-زيد 61
+زيد 62
 زَادَ 49	10h11t1721cy1ii1kd1kh1sf1uz1wa1zm21r21r21s26d26o27q2ct2j92li2m12mn2n22ne2nt2sm2we36l38z3qr3tp3ui3ur3ur3uu41b43z4b84bb4be4iq56p57457757b57h5875925ee
+زَيْد 1	3r6
 زِيَادَة 2	1zc22m
 مَّزِيد 2	4lg4ll
 ٱزْدَادُ 8	1an1d31hi2a52bn2o54jf59i
@@ -2375,6 +2435,8 @@
 يَتَسَآءَلُ 9	1dq2nz3523k63xz3ym4o859r5dl
 سام 3
 يَسْـَٔمُ 3	1814a84aj
+سبا 2
+سَبَإ 2	3gd3sl
 سبب 11
 سَبَب 9	14t2ps2pt2px2q030i42k47t47u
 يَسُبُّ 2	1ox1ox
@@ -2408,7 +2470,7 @@
 مَسْبُوقِين 2	4vz56g
 ٱسْتَبَقَ 5	14b1jx28t2913wr
 سبل 176
-سَبِيل 176	
+سَبِيل 176	13714h15415h15m16616816916z17117117g17h17s18i1a81au1aw1c71ci1cs1cu1dk1e41eb1en1ep1ew1ex1f41fr1fr1fs1ft1ft1g11g51g61g71gb1gc1gf1gh1gw1hi1hm1ho1hv1i51ic1ix1j11jk1k31k91kq1ng1p51p61q61q61rr1sw1ug1uk1uk1uk1uk1um1x81xd1xj1xw1y81ya1yg1yk1yu1yv1yz1z91z91zd1zg1zz1zz20k20u20w21e21n24c24d25g2bc2cc2cp2cy2dg2g62h22h82iq2j92jf2ka2ka2l32l92lj2lp2md2mp2nf2p52p72up2xu30c30s31p36537k37s38238938h38j38w3gf3iy3l43ll3lu3mp3nr3oj3os3q93s043043044y47047447m47u47v4bt4bu4bw4by4cf4d64ia4id4j54j74jb4kj4pq4x94y84yl4z34z34zj4zq50652m57358m58n5be5c45gi
 ستت 8
 سِتَّة 7	1s021z25438y3pf4lo4x3
 سِتِّين 1	4xw
@@ -2572,6 +2634,8 @@
 سَفَه 1	1pt
 سَفِهَ 1	13t
 سَفِيه 7	10k10k1451811du1ut57f
+سقر 4
+سَقَر 4	4ry59d59e59t
 سقط 8
 تُسَٰقِطْ 1	2r7
 تُسْقِطَ 3	2mx3en3sf
@@ -2614,6 +2678,8 @@
 سلخ 3
 نَسْلَخُ 1	3vy
 ٱنسَلَخَ 2	1vd1yg
+سلسبيل 1
+سَلْسَبِيل 1	5bt
 سلسل 3
 سِلْسِلَة 3	48s54r5bf
 سلط 39
@@ -2649,6 +2715,8 @@
 مُّسْلِمَة 1	13r
 سلو 3
 سَّلْوَىٰ 3	11s1uy2vg
+سليمان 17
+سُلَيْمَٰن 17	1311311i81o92z52z62z83g63g73g83g93gl3gr3gz3si434438
 سمد 1
 سَٰمِدُون 1	4ql
 سمر 4
@@ -2779,6 +2847,10 @@
 أَسَلْ 1	3si
 سَالَتْ 1	2bw
 سَيْل 2	2bw3sm
+سيناء 1
+سَيْنَآء 1	32t
+سينين 1
+سِينِين 1	5pg
 شام 3
 مَشْـَٔمَة 3	4uk4uk5nu
 شان 4
@@ -2878,6 +2950,8 @@
 يُشْعِرُ 2	1oy2nz
 شعل 1
 ٱشْتَعَلَ 1	2qm
+شعيب 11
+شُعَيْب 11	1sv1sy1t01t21t227927c27g27j3ed3ls
 شغف 1
 شَغَفَ 1	296
 شغل 2
@@ -3135,6 +3209,8 @@
 صَٰغِرُون 5	1qv1tt1z42983gs
 صغو 2
 صَغَتْ 2	1p251d
+صفا 1
+صَّفَا 1	14l
 صفح 8
 صَفْح 2	2gf4ca
 يَصْفَحُ 6	1381iy2gf3654em50t
@@ -3343,6 +3419,8 @@
 ضَآئِق 1	259
 ضَيِّق 2	1pe37o
 ضَيْق 2	2kc3hp
+طالوت 2
+طَالُوت 2	172174
 طبع 11
 طَبَعَ 11	1i01ta1tb20q20w23y2jt3oc47s4ip507
 طبق 4
@@ -3623,6 +3701,8 @@
 عدل 28
 عَدَلَ 14	1ds1ha1hg1it1it1ly1nv1q31q51ux1vj3hf4b35i4
 عَدْل 14	11j13m1811811fb1l81l81lj1nv1p42ix2jb4kd50z
+عدن 11
+عَدْن 11	20b2c22ho2ob2s72vc3ul43o4714zr5qi
 عدو 106
 عَاد 6	1501py2k032g3e2566
 عَادَيْ 1	4z9
@@ -3686,6 +3766,8 @@
 مَّعْرُوفَة 1	370
 يَتَعَارَفُ 2	2354kh
 ٱعْتَرَفُ 3	21547451w
+عرفات 1
+عَرَفَٰت 1	15p
 عرم 1
 عَرِم 1	3sm
 عرو 3
@@ -3716,6 +3798,8 @@
 عَزْم 5	1db2wf3ou4bv4i9
 عزو 1
 عِزِين 1	56c
+عزير 1
+عُزَيْر 1	1z5
 عسر 12
 تَعَاسَرْ 1	513
 عَسِر 1	4qu
@@ -3844,7 +3928,7 @@
 أَعْلَٰم 2	4bk4st
 عَلَٰمَٰت 1	2h9
 عَلِمَ 382	
-عَلِيم 163	
+عَلِيم 163	11011312u13e13q14014l15816616f16i16m16z17117217b17g17n17s18118219319419w1a61ap1bc1bg1bi1cf1e01e11e61ed1ef1el1eo1es1fn1g91gl1gs1h81hs1ht1if1il1is1k31kp1la1ma1o81ol1oq1p41ph1ps1tj1tm1w21wp1xe1xf1xp1xx1y71yb1yq1z31zj1zm1zz21021121621921d21i22w23p24325228i28v29a29q29v2ag2an2b42er2fj2gg2hl2ir2x331j31q33o36136436b36f36i36o37537637737b3ae3ah3ex3fk3fx3hx3kx3mg3mi3o73p03pb3q63r93rk3rn3sw3tw3ug3uq3uw3vz3x43x644x46v49i4a64b04bc4c24ce4eh4es4jf4k14k54kc4kh4kk4mn4mp4x24x54xz4zc50050j50q51b51c51y5c5
 عَلَّمَ 41	11211313113113s14e14e16u17618118119h1ac1cp1gu1ip1ip1ip1ln1og28i28x29d2a82b52jo2p92pa2pa2v72z73at3g73wu4kk4p14s74s94zv5pq5pr
 عَلَّٰم 4	1lm1lt20h3ti
 عَٰلَمِين 73	10211i13l13u17619219b1at1au1b51j51jd1ls1n61nw1ob1of1qf1s01s71sd1sq1te1tv1ue22622x2b82g02yy2zi2zy37c39w3a33ar3bl3c63ch3cz3dh3e03e13eg3es3fz3gz3j63ky3l23l73lk3pd3zf3zn42a44p46t48l48m48n49f4df4fi4gp4h94wj4yu53v5525hv5hx5im
@@ -3888,6 +3972,8 @@
 يُعَمَّرُ 5	12v12v3tz3up3wt
 ٱسْتَعْمَرَ 1	26m
 ٱعْتَمَرَ 1	14l
+عمران 3
+عِمْرَٰن 3	19219451l
 عمق 1
 عَمِيق 1	30u
 عمل 360
@@ -3914,7 +4000,7 @@
 عَنِ 3	1bf21v4kb
 عند 195
 عَنِيد 4	26k2d14la593
-عِند 191	
+عِند 191	11p11x12b12e12f12o12t13013213813913b14315i15p16817a17h17t17w18118c18j18k18o19619619s1a61ab1ab1bn1ch1co1cq1cu1dk1dk1dn1dn1do1fv1fv1fv1fy1fz1gb1hf1hk1js1k11k91lz1nk1oy1pd1pg1q11rb1rd1u51u81uv1vp1vp1w81wc1wi1wu1x01x41x71xr1yi1yi1yi1yu1yv1yx1zb1zr21221y22e23s24025p27828t29i2aj2bn2ci2cm2dn2dw2en2jg2jh2jh2l02lf2oq2p92pu2s12sm2so2sx2uo2xi2zb30x31e35i35w35y36m3783gv3gv3h23j33jd3jo3jp3k03l93m63ns3pb3pn3qa3rm3rw3s23st3t13t73ur3yk41w42j42z43e43l43q45l45o47i47s47s4944a84ak4am4b44ba4bo4d44di4ei4er4hk4hx4ip4jg4k74kh4kq4mt4ok4oo4pa4pb4pv4rl4s54xi4zi50450b50u51k52b53d53q58n5ho5ot5qi
 عند  6
 عِند 6	1nb1ni1nj25s2a03ki
 عنق 9
@@ -3961,6 +4047,8 @@
 أَعِيبَ 1	2pn
 عير 3
 عِير 3	2aa2am2ay
+عيسى 25
+عِيسَى 25	12m13z17819e19l19o19s1ah1i21i81ig1jv1kr1ln1lp1lr1lt1oa2rg3qc4b14dw4xq4zl4zt
 عيش 8
 عِيشَة 2	54g5r8
 مَعَاش 1	5dv
@@ -4242,6 +4330,8 @@
 فرد 5
 فَرْد 3	2sq2t52zg
 فُرَٰدَىٰ 2	1oj3tg
+فردوس 2
+فِرْدَوْس 2	2qf32k
 فرر 11
 فَرَّتْ 6	3a13ql4n95015a25gw
 فِرَار 4	2ny3qi3ql56p
@@ -4263,6 +4353,8 @@
 يَفْرُطَ 1	2uh
 فرع 1
 فَرْع 1	2da
+فرعون 74
+فِرْعَوْن 74	11k11l18g1td1te1tj1tn1tx1u11u41ub1uf1xo1xq1xq23z24324724724c24e27m27m27m2cs2n62n72tw2uf2uw2ve2vf33j39r39w3a33al3ao3ax3g33if3ig3ii3ik3ik3il3j83je3lv42m47h47j47l47m47t47u47u4824834df4dk4f34fh4kz4mx4rr51k51k54458i58j5f55kn5mr
 فرغ 6
 أَفْرِغْ 3	1751u02q4
 فَرَغْ 2	4t05pd
@@ -4437,6 +4529,8 @@
 تَفِيضُ 2	1kw20v
 فيل 1
 فِيل 1	5rx
+قارون 4
+قَٰرُون 4	3kg3kj3lv47h
 قبح 1
 مَقْبُوحِين 1	3ji
 قبر 8
@@ -4573,6 +4667,8 @@
 مُّقَرَّنِين 3	2dz37o43c
 قري 57
 قَرْيَة 57	11t17e1fs1oh1pc1pk1qm1ss1sy1t41t61t71t81tb1uz1v124m27p27r2862am2bd2e62jx2kt2lz2p32pl2x52xa2z12zm31c31f38f38q3f83gp3hb3jy3jz3jz3ln3lq3so3so3t43va4av4cs4d04i14im4im4yl4ys515
+قريش 1
+قُرَيْش 1	5s2
 قسر 1
 قَسْوَرَة 1	5a2
 قسس 1
@@ -4844,7 +4940,7 @@
 كَذَبَ 11	10h1ml20g20t25f2932be3vc45m46e4p7
 كَذِب 33	1a81ab1ar1f31jq1jr1lg1mi1oi1px1rj1sz22d23k23t25f28u2ij2jq2k12k12k12nl2nv2ux33b3mo3se47l4bc4y64zm57g
 كَذَّاب 5	42e47h47l4rb4rc
-كَذَّبَ 176	
+كَذَّبَ 176	11a12m18g1d91d91iv1kj1kz1m21mi1mo1ms1mu1mv1mv1n01na1ni1nr1q01q11q31qa1ri1rj1rm1sa1sa1si1t21t21t61tb1ua1uk1ul1ve1vf1vk1xq22d22z22z23123523x23x23y24j2ga2jy2m02uk2us2z431931931b31o32z33633c33h33l35637m37m37u38b38c39g39m39s3cd3cp3cv3db3dd3dw3ec3ep3i23i33ja3la3la3lt3mo3mz3n53pv3tc3tf3tf3ts3ts3ud3ud3vb3xt40r42m42o45f45m46d46y48r4kr4ky4l04nx4qp4qv4qv4r44r94rj4rs4si4sl4sn4sq4ss4su4sx4sz4t14t34t54t74t94tb4tc4te4tg4ti4tk4tm4to4tq4ts4tu4tw4ty4u04u24u44u64u84ua4wl4xi4zy50p51u52353n53z59x5b35cz5ec5f95i65ir5is5ix5k25o65o95oj5oq5pl5pz5s6
 كَٰذِب 32	19u1mp1sc1zh1zi21a25o27i2922ae2hw2j72jq34r35q35r35w3em3fn3gi3je3kv3l441g44t47l47u4ud4ya4yp5055q2
 كِذَّاب 2	5ec5ej
 مَكْذُوب 1	26q
@@ -5073,6 +5169,8 @@
 لطف 8
 لَطِيف 7	1os2b431u3ot3r34b751z
 يَتَلَطَّفْ 1	2nz
+لظىا 1
+لَظَىٰ 1	55q
 لظي 1
 تَلَظَّىٰ 1	5oo
 لعب 20
@@ -5115,6 +5213,8 @@
 تَلْقَفُ 3	1tr2v53ap
 لقم 1
 ٱلْتَقَمَ 1	416
+لقمان 2
+لُقْمَٰن 2	3op3oq
 لقي 146
 أَلْقَىٰٓ 71	15m19d1cc1g71g81gb1ig1kd1th1tp1tq1tq1tr1tu1uo1wk24424528m2ax2b02el2h82hl2j72j82lg2tr2ts2ub2ub2v12v12v22v52v62vn31j31j31k37j37o3ac3an3ao3ap3aq3fn3g13gj3gk3ij3j73kq3on3zx4384784aa4dm4kt4la4lc4ln4rb4z351s51t5885am5jk
 تَلَقَّىٰٓ 4	1182zu35y4l3
@@ -5162,6 +5262,8 @@
 لَوْح 5	1uj1uo1us4qz5kr
 لوذ 1
 لِوَاذ 1	37a
+لوط 27
+لُوط 27	1ob1sq26v26z27227627e2fp2fr2yy2z131a3dw3dx3e33h93hb3li3lk3lo3lp40x42n4kz4rj4rk51j
 لوم 14
 لَآئِم 1	1k3
 لَوْمَة 1	1k3
@@ -5188,6 +5290,10 @@
 لِن 2	1ck45d
 لَّيِّن 1	2ug
 لِّينَة 1	4yj
+ماجوج 2
+مَأْجُوج 2	2q22zn
+ماروت 1
+مَٰرُوت 1	131
 ماي 10
 مِائَة 10	17e17e17g1y11y11y21y22o535l41b
 متع 70
@@ -5215,6 +5321,8 @@
 يَمْحَقُ 2	17v1c2
 محل 1
 مِحَال 1	2bs
+محمد 4
+مُحَمَّد 4	1c53r94ib4k4
 محن 2
 ٱمْتَحَنَ 2	4k74zc
 محو 3
@@ -5236,6 +5344,8 @@
 مدن 17
 مَدَآئِن 3	1tl3ag3ax
 مَدِينَة 14	1tx21421n2962fx2nz2pq3h33ir3iu3iw3rt3vh50c
+مدين 10
+مَدْيَن 10	1sv20927927k2uc31b3iy3iz3jl3ls
 مرا 38
 مَرْء 4	1311ww5eo5gw
 مَّرِيٓـٔ 1	1dt
@@ -5268,6 +5378,8 @@
 مَرِضْ 1	3bo
 مَّرَض 13	10h10h1k11xl21s31k36x3qh3r13rt4it4j259i
 مَّرِيض 10	15b15c15n1ew1gj1ir20u3784js58n
+مروة 1
+مَرْوَة 1	14l
 مري 20
 تَمَارَ 4	4b64p84qf4rm
 تُمَارِ 1	2o2
@@ -5275,6 +5387,8 @@
 مِرَآء 1	2o2
 مِرْيَة 5	25e27y31m3py4ao
 يَمْتَرُ 5	1lz2ft2rg4du4g0
+مريم 34
+مَرْيَم 34	12m17819519619b19c19d19e19e1i11i21ig1ig1j21j21jv1kl1ko1kr1ln1lp1lr1lt1z62qy2r92rg33n3qc4dq4xq4zl4zt51l
 مزج 3
 مِزَاج 3	5bg5bs5j7
 مزق 4
@@ -5306,6 +5420,8 @@
 ٱسْتَمْسَكَ 3	17b3oz4dc
 مسو 1
 تُمْسُ 1	3n6
+مسيح 11
+مَسِيح 11	19e1i21ig1ih1j21j21kl1kl1ko1z51z6
 مشج 1
 أَمْشَاج 1	5bd
 مشي 23
@@ -5333,6 +5449,8 @@
 أَمْعَآء 1	4io
 مقت 6
 مَقْت 6	1eb3ur47347347s4zi
+مكة 1
+مَكَّة 1	4jz
 مكث 7
 مَكَثَ 4	2bw2ti3gd3j5
 مُكْث 1	2nb
@@ -5385,6 +5503,8 @@
 مَنُون 1	4od
 مَنّ 6	11s17h17j1uy2vg4id
 مَنَّ 16	1cp1gb1ne2au2cx2u93a23ih3km40e43d4kl4kl4kl4oa58t
+منواة 1
+مَنَوٰة 1	4pg
 مني 21
 أُمْنِيَّت 6	12d13a1h41h431j4xd
 تَمَنَّىٰٓ 3	31j3km4pk
@@ -5420,6 +5540,8 @@
 مور 3
 تَمُورُ 2	4ns521
 مَوْر 1	4ns
+موسىا 136
+مُوسَىٰ 136	11m11o11p11q11v11w12212m12r13713z1711731ah1hy1hy1i91j51j71j91o91og1q71td1te1tp1tr1tw1u11u21u51u81uc1ug1ug1uh1uh1ui1um1uo1us1ut1ux1uy23z24124424524724824b24c25e27l27z2cr2cs2cu2kf2n62n62p42pa2rx2th2tj2tp2tr2u82uc2ul2ut2ux2v12v32v62vd2vj2vm2vo2vr2yb31b33i33m38a39q3an3ap3as3aw3b53b73b93fy3g03g13if3ij3im3ir3iu3iv3iw3j53j63j73jc3jd3je3jj3jk3jo3jo3kg3lv3py3qc3s240e40k47g47j47k47u48a4af4b14df4hm4i44mx4pw4zk5f35lr
 مول 86
 مَال 86	14i15415f15f17217g17h17j17k17t17y18f1bd1db1dr1dr1dr1du1dv1dv1dz1ed1ei1en1er1gc1gc1i61q51x01x81y81yv1yz1z91zg1zj1zu20820k20o20r21621e24c24c25q27c2kj2lb2m52oe2oj2oq2sn33s36g3bw3gr3ns3qw3t53t74j94jm4kj4me4xj4y94ym4zq50d50u52t54n55z56v57458z5n15nh5ol5os5rp5rq5sq
 موه 63
@@ -5433,6 +5555,8 @@
 تَمَيَّزُ 1	51t
 يَمِيزَ 2	1d41x9
 ٱمْتَٰزُ 1	3wk
+ميكىال 1
+مِيكَىٰل 1	12x
 ميل 6
 مَيْل 2	1eg1ha
 مَّيْلَة 1	1gj
@@ -5535,7 +5659,7 @@
 نزف 2
 يُنزَفُ 2	3yj4uu
 نزل 293
-أَنزَلَ 183	
+أَنزَلَ 183	10b10b10t11c11s11u12p12q12q12y13113z13z14m14r14x15115c16416m18418818918c19m19y1a51ah1ah1cf1do1do1fd1fd1fe1gm1gu1hh1i71i71ib1ib1ij1jt1jt1ju1jw1jw1jx1jx1jy1jy1k81k81kd1kf1kg1kh1kh1ku1kw1lh1lr1m51m51og1og1oh1oi1oi1oo1p31q81q91qa1qk1ql1r81s31uv1uy1xd1z11z11zf20p21021r21u22g22k23j24i25925b28e29g2bg2bm2bw2by2c62cf2cg2cn2di2eo2gk2h32hh2hn2i12il2im2n72na2nh2op2ta2up2wd2x92yd30830j31u32r32x33235k35k36h36t37h37i37w38n3hf3j03kr3m23m23m33m63m73no3on3oy3qv3sc3uf3vc3vp42i43344s44w45b45v46949k4a94b34b54ep4ge4i44ii4it4jf4jt4k14pj4w84xo4xo4xx4yz50n5125175dy5q6
 تَنزِيل 15	2nb2tc3803es3pd3v244r46v4984ac4gb4hc4wj5525by
 تَنَزَّلَتْ 7	2sa3fa3fl3fm4a05195q9
 مَنَازِل 2	2213w0
@@ -5815,6 +5939,8 @@
 نوب 18
 أَنَابَ 11	27d2c63os42y4384574684764ay4b14z6
 مُّنِيب 7	2703nk3nm3sf44y4ku4lj
+نوح 43
+نُوح 43	1921i81o91s51sf20923v25m25t25x26326626726927e2cv2kg2ku2s42z331932w38c3cd3ce3co3l63qc3zb3zf42m46y47o4b14ky4n54qc4qv4xp51j56k574579
 نور 194
 مُّنِير 6	1d930b3903ox3rf3ud
 نَار 145	10o10v11a12f12g13p14u15115215s16816c17c17l17u18f18l18t1b01bd1bs1cc1d81da1dg1dh1dz1e31ej1f91hq1je1jm1kd1kl1mo1ph1qu1ri1rk1rk1rq1rt1rw1wm1ys1za20220720k21c22422n25d25e27n27v2822bk2bw2ce2dg2e02et2ij2o92ox2q42ti2ti2ti2y22yw30m32335536i3743fy3fz3i93j53j53j53jh3lg3lh3pv3pv3rz3tc3uo3x543143x43z44244e44y45645946z47y48048348448448648t49p49u49y4aa4h74hu4i84il4io4m84nw4nx4ry4sk4t44wa4xe4y94yh4yv4yy50p51f51j57857y59i5ka5lk5lv5nv5oo5qg5rc5rt5sr
@@ -5840,6 +5966,12 @@
 يَنَالُ 11	13n1ap1l71rj1rv1uq20d21n3143143qu
 هات 4
 هَاتُ 4	13a2xn3hj3kf
+هاروت 1
+هَٰرُوت 1	131
+هارون 20
+هَٰرُون 20	1731i81o91tw1ug23z2ra2rz2u22v62vq2vs2yb33i38a39t3as3ja40e40k
+هامان 6
+هَٰمَٰن 6	3ii3ik3je3lv47h47t
 هبط 8
 يَهْبِطُ 8	11711911w1291qv1r62692wn
 هبو 2
@@ -6220,7 +6352,7 @@
 مُتَّقِين 49	10912115415715l16w1a91bc1bu1bz1jc1jv1u21x61yf1yi1zb1zj21q26a2ce2fb2hn2ho2sv2t72yb36h37q39d3by3kn43243n45n46b4d44e04g14gs4io4lh4ma4o04s453d5575db5ef
 وَاق 3	2cd2cg47e
 وَقَىٰ 16	15s18l1dg2j22j24704724724824g64o14oa4yn50v51f5bm
-ٱتَّقَىٰ 166	
+ٱتَّقَىٰ 166	10s10v11c11j11y13213m15615a15e15g15g15l15n15o15u15u15x16316e16f16m16o17x18018118118218k18x19j1a91az1bh1bk1bm1br1bs1cx1d41db1dn1dp1dq1dq1dy1fu1h91ha1hc1in1ip1is1it1iw1jk1k61ke1l11l61l61l61l91ld1ll1lp1mt1nc1nu1nu1nx1q61q81rh1s91sb1t61uu1v21v71v91w31w91wx1x11xs1y521i21m22222r23n27329x2au2bd2ce2fz2gv2hn2i92kd2si2wd30432w33533p34o36z39r3ce3cg3ci3cw3cy3d33d43de3dg3dm3dx3dz3ed3ef3ek3h83l83nk3pa3q63r13r63ro3s33w640o45045645a45e45i46f46r49o4dw4j94k54ke4kg4ps4xr4y14yl4yw4yw4zd50v50y50z51151251756m58k5of
 وكا 11
 أَتَوَكَّؤُا۟ 1	2tq
 مُتَّكَـٔ 1	297
@@ -6275,6 +6407,8 @@
 وَهْن 2	3or3or
 وهي 1
 وَاهِيَة 1	54b
+ياجوج 2
+يَأْجُوج 2	2q22zn
 ياس 13
 يَئِسَ 8	1io2ar2ar2ca3lf4zf4zf511
 يَـُٔوس 3	2562mo4aj
@@ -6285,6 +6419,10 @@
 يَبَس 1	2vd
 يتم 23
 يَتِيم 23	12i15416616b1dr1ds1dv1dx1dz1ep1h81h81q51xd2lb2pq4yl5bj5my5nq5p15p45s7
+يثرب 1
+يَثْرِب 1	3qi
+يحيىا 5
+يَحْيَىٰ 5	1981oa2qp2qu2zh
 يدي 120
 يَد 120	12112e12e12u12w15m16s17417a18818v19j1a61d71ew1ff1fu1g81ir1ir1iw1iw1jd1jd1ji1jn1jv1jv1jx1kd1kd1kd1l71m41oh1oi1qz1s31ti1ty1un1vx1xn1y61yp1z41zr20622x26v29729q2bf2bq2cv2l62p12sa2tu2v72wa2xr30d32734p36736n38238n3ad3at3g33hi3j83jn3np3nu3sf3si3t13tg3uj3v63vw3w63wq3ww3x843i43j44d49k49v4ac4bi4c04hv4i44jl4jl4jv4jz4jz4k54xb4xs4y44y54yg4yg4z44ze4zl50051h51m5825eo5gd5sp
 يسر 44
@@ -6297,6 +6435,12 @@
 يُسْر 7	15c2pw4ly5115145pb5pc
 يُسْرَىٰ 2	5lg5oh
 ٱسْتَيْسَرَ 2	15n15n
+يعقوب 16
+يَعْقُوب 16	13v13w13z1431ah1i81o926w28i29e2a82qo2rv2yz3lj43j
+يعوق 1
+يَعُوق 1	576
+يغوث 1
+يَغُوث 1	576
 يقظ 1
 أَيْقَاظ 1	2ny
 يقن 28
@@ -6314,5 +6458,11 @@
 يَمِين 65	16f16g1aa1ds1ed1ee1em1ep1k21l21l21l21l21ll1ll1oy1qz1yn1yn1yo2hv2i52is2jc2jd2jf2mc2nx2ny2tp2v532f36e36g3703753m43nh3rj3rj3rl3ro3sl3uu3y03zt46l4l34v24v24vd4wt4wu4xb4y850651b51h53i54e55456556c59q5jn
 ينع 1
 يَنْع 1	1oo
+يهودي 9
+يَهُودِيّ 9	13c13c13j1a01j31k01kd1kv1z5
+يوسف 27
+يُوسُف 27	1o928g28j28k28l28m28n28t28x29529m29r29w29y2a92ag2ah2ak2ao2ap2ar2at2au2au2ay2b347r
 يوم 405
 يَوْم 405	
+يونس 4
+يُونُس 4	1i81ob24m413
