@@ -1,7 +1,7 @@
 "use strict";
-const VERSION = "V1.2";
+const VERSION = "V1.3";
 var sajda;  //global array
-const MAX_REF = 150;
+const MAX_REF = 120;
 const letterToRoots = new Map();
 const rootToWords = new Map();
 const wordToRefs = new Map();
@@ -101,18 +101,21 @@ function selectRoot(root) {
     if (!root) root = menu2.value;
     else menu2.value = root;
     let list = rootToWords.get(root);
-    //menu3.disabled = (list.length == 1);
-    menu3.style.color= (list.length == 1? "gray" : "");
+    let nL = list.length;
     makeMenu(menu3, list);
-    menu3.selectedIndex=-1; //do not select Word
+    if (nL > 1)
+      menu3.selectedIndex = -1; //do not select Word
+    menu3.disabled = (nL == 1);
+    menu3.style.color = (nL == 1? "gray" : "");
     //combine refs in list
     combine.hidden = true; let indA = [];
-    for (let j=0; j<list.length; j++) {
+    for (let j=0; j<nL; j++) {
         let str = wordToRefs.get(list[j]);
-        let n = str.length/3;
-        if (n == 0 || n > MAX_REF) 
+        let nR = str.length/3;
+        if (nR == 0) //too many refs -- not indexed
             menu3.children[j].disabled = true;
-        else addIndexes(str, indA);
+        else if (nL < 3*MAX_REF || nR < MAX_REF) 
+            addIndexes(str, indA);
     }
     indA.sort((a, b) => (a-b));
     let [page, refs] = indexToArray(indA);
@@ -122,19 +125,11 @@ function selectWord(word) {
     if (!word) word = menu3.value;
     else menu3.value = word;
     combine.hidden = false;
-    makeTable(word);
-}
-function makeTable(word) {
     let str = wordToRefs.get(word);
     let [page, refA] = parseRefs(str);
     displayRef(word, page, refA);
 }
 function displayRef(word, page, refA) {
-  function threeDigits(k) {
-    let s = ""+k; 
-    while (s.length < 3) s = "0"+s;
-    return s;
-  }
     const m=30, n=20;
     let row = "<th>Juzz</th><th>Page</th>";
     for (let j = 1; j <= n; j++) {
@@ -147,7 +142,7 @@ function displayRef(word, page, refA) {
     let pn=0, p=0, q=0, nc=0;
     for (let i = 1; i <= m; i++) {
         //let pn = 20*(i-1);
-        row = "<th>"+i+"</th><th>"+threeDigits(pn)+"</th>";
+        row = "<th>"+i+"</th><th>"+(""+pn).padStart(3,"0")+"</th>";
         for (let j = 1; j <= n; j++) {
             pn++; //page number
             let s1 = "", s2 = ""; //s1 is visible, s2 is hidden
@@ -178,13 +173,14 @@ function displayRef(word, page, refA) {
     //window.location.hash = "#"+word;
 }
 function doClick1() {
-    let t = window.event.target;
-    if (t.tagName.toLowerCase() != "td")
-        t = t.parentElement;
+    let t = event.target;
+    if (t.tagName.toLowerCase() != "span") return;
+    t = t.parentElement;
     if (t.tagName.toLowerCase() != "td") return;
     const REF = "http://kuranmeali.com/Sayfalar.php?sayfa=";
     let r = t.parentElement.rowIndex;
     let p = (20*(r-1)+t.cellIndex-1);
+    if (p == 1) p = 0; //first page is Fatiha
     console.log("click on p"+p);
     window.open(REF+p, "text", "resizable,scrollbars", true);
 }

@@ -2,8 +2,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <meta name="google" content="notranslate">
-    <meta http-equiv="Content-Language" content="tr">
     <script src="Mujam.js"></script>
     <script src="Utilities.js"></script>
     <title>Visual Mujam </title>
@@ -34,7 +34,7 @@
     td { 
         border: 1px solid blue; 
         padding: 0px 4px; 
-        cursor: pointer;
+        cursor: default;
     }
     td:hover .t1 { visibility: visible; }
     td:hover .t2 { visibility: visible; }
@@ -44,6 +44,7 @@
         text-align: center;
         padding: 5px;
         position: absolute;
+        cursor: pointer;
     }
     .t1 {
         background-color: cyan;

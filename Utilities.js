@@ -73,7 +73,8 @@ const last = [0,7,293,493,669,789,954,1160,1235,1364,
     6138,6146,6157,6168,6176,6179,6188,6193,6197,6204,6207,
     6213,6216,6221,6225,6230,6236];
 const nChap = last.length-1, nVerse = last[nChap];
-var index, nPage, sName, pLabel = [];
+var index, nPage, sName, pLabel = []; //global
+
 function init() {
   console.log(nChap+" suras -> "+nVerse);
   const count = [0,12,11,8,5,8,11,9,4,8,7,7,5,5,8,4,7,7,7,8,7,4,8,10,6, //7,5
@@ -99,10 +100,6 @@ function init() {
     5,12,14,19,26,19,26,28,29,16,17,13,15,19,18,30,28,26,20,25,31,30,
     24,32,33,29,28,26,23,23,28,30,29,23,28,24,21,22,13,19,79];
   //24,32,42,29,19,36,25,22,36,26,30,20,36,19,27,13,19,19,17,14,14,15]; juzz 30
-  nPage = count.length;
-  index = new Array(nPage+1); index[0] = 0;
-  for (var i=0; i<nPage; i++) index[i+1] = index[i] + count[i];
-  console.log(nPage+" pages -> "+index[nPage]);
   const suraNames = `
 Fatiha
 Bakara
@@ -218,11 +215,15 @@ Leheb
 İhlas
 Felak
 Nas`;
+    nPage = count.length;
+    index = new Array(nPage+1); index[0] = 0;
     sName = suraNames.split("\n");
     for (let p=0; p<=nPage; p++) {
+        index[p+1] = index[p] + count[p];
         let [c, v] = toCV(index[p]+1);
-        pLabel.push(sName[c]+" "+v+ ", p."+p)
+        pLabel.push(sName[c]+" "+c+":"+v+ ", p."+p)
     }
+    console.log(nPage+" pages -> "+index[nPage]);
 }
 init()
 
