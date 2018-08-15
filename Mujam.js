@@ -1,5 +1,5 @@
 "use strict";
-const VERSION = "V1.3";
+const VERSION = "V1.3a";
 var sajda;  //global array
 const MAX_REF = 120;
 const letterToRoots = new Map();
@@ -172,8 +172,8 @@ function displayRef(word, page, refA) {
     console.log(word, t1); 
     //window.location.hash = "#"+word;
 }
-function doClick1() {
-    let t = event.target;
+function doClick1(evt) {
+    let t = evt.target;
     if (t.tagName.toLowerCase() != "span") return;
     t = t.parentElement;
     if (t.tagName.toLowerCase() != "td") return;
