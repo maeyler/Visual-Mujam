@@ -10,9 +10,14 @@ Then comes computer software. [Here is the list](http://corpus.quran.com/qurandi
 
 Our aim in this project is to present the word list in a visual context. At the start of the project, several sample words were prepared manually. The challenge was to make similar pages automatically for each of the 4700 distinct words in Quran... 
 
+June 4, 2018 -- Istanbul
+
 ![Picture](Adem/Adem.jpg)
 
-June 4, 2018 -- Istanbul
+### Limitations
+
+V1.4 omits only 5 words that occur more than 500 times each: <br>
+Allāh, rabb, qāla, kāna, āmana -- all other words are indexed
 
 
 ### Earlier test runs

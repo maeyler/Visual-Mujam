@@ -32,7 +32,7 @@ class Root {  //lemmas within each root
 }
 
 class Lemma {  //reference list for each lemma
-    final static int M = 200;
+    final static int M = 500;
     String str;  int count = 0;
     boolean tooMany = false;
     List<Location> ref = new ArrayList<>();
@@ -179,7 +179,7 @@ class RootReader implements Runnable {
 6468 lines in Roots.txt
 1725 roots = 1652+77-4
 424 singletons = 398+30-4
-30 large ref
+5 large ref
 6468 lines in data.txt
 4 proper nouns are added to other roots
 */
