@@ -1,5 +1,5 @@
 "use strict";
-const VERSION = "V1.3a";
+const VERSION = "V1.4";
 var sajda;  //global array
 const MAX_REF = 120;
 const letterToRoots = new Map();
@@ -129,7 +129,24 @@ function selectWord(word) {
     let [page, refA] = parseRefs(str);
     displayRef(word, page, refA);
 }
+function numToDots(n) { //not used
+    if (n == 1) return ".";
+    if (n == 2) return ":";
+    if (n == 3) return "⁖";
+    if (n == 4) return "⁘";
+    if (n == 5) return "⁙";
+    if (n == 6) return "⁘:";
+    if (n == 7) return "⁖⁘";
+    if (n == 8) return "⁖⁙";
+    return "⁘⁙";
+}
 function displayRef(word, page, refA) {
+  function threeDigits(k) {
+  //same as (""+k).padStart(3,"0")
+    let s = ""+k;  
+    while (s.length < 3) s = "0"+s; 
+    return s; 
+  } 
     const m=30, n=20;
     let row = "<th>Juzz</th><th>Page</th>";
     for (let j = 1; j <= n; j++) {
@@ -141,14 +158,14 @@ function displayRef(word, page, refA) {
     let text = "<tr>"+row+"</tr>";
     let pn=0, p=0, q=0, nc=0;
     for (let i = 1; i <= m; i++) {
-        //let pn = 20*(i-1);
-        row = "<th>"+i+"</th><th>"+(""+pn).padStart(3,"0")+"</th>";
+        // pn == 20*(i-1);
+        row = "<th>"+i+"</th><th>"+threeDigits(pn)+"</th>";
         for (let j = 1; j <= n; j++) {
             pn++; //page number
             let s1 = "", s2 = ""; //s1 is visible, s2 is hidden
             if (pn == page[p]) {
                 let c = refA[p].split(" ").length;
-                s1 = " "+c;
+                s1 = ""+c;  //numToDots(c);
                 let k = refA[p].indexOf(":");
                 k = (k<0? 0 : Number(refA[p].substring(0, k)));
                 s2 = "<span class='t2'>"+sName[k]+" "+refA[p]+"</span>";
