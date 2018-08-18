@@ -1,7 +1,7 @@
 "use strict";
-const VERSION = "V1.4";
+const VERSION = "V1.5";
 var sajda;  //global array
-const MAX_REF = 120;
+const MAX_REF = 100;
 const letterToRoots = new Map();
 const rootToWords = new Map();
 const wordToRefs = new Map();
@@ -129,16 +129,10 @@ function selectWord(word) {
     let [page, refA] = parseRefs(str);
     displayRef(word, page, refA);
 }
-function numToDots(n) { //not used
-    if (n == 1) return ".";
-    if (n == 2) return ":";
-    if (n == 3) return "⁖";
-    if (n == 4) return "⁘";
-    if (n == 5) return "⁙";
-    if (n == 6) return "⁘:";
-    if (n == 7) return "⁖⁘";
-    if (n == 8) return "⁖⁙";
-    return "⁘⁙";
+function toColor(n) {
+    if (n == 0) return "";
+    let g = 255-16*n, b = 160-10*n;
+    return "rgb("+g+", "+g+", "+b+")";
 }
 function displayRef(word, page, refA) {
   function threeDigits(k) {
@@ -148,35 +142,39 @@ function displayRef(word, page, refA) {
     return s; 
   } 
     const m=30, n=20;
-    let row = "<th>Juzz</th><th>Page</th>";
+    let row = "<th>Page</th>"; //"<th>Juzz</th>";
     for (let j = 1; j <= n; j++) {
         let s;
         if (j > 9) s = ""+j;
         else s = "0"+j;
-        row += "<th>+"+s+"</th>";
+        row += "<th>"+s+"</th>";
     }
     let text = "<tr>"+row+"</tr>";
     let pn=0, p=0, q=0, nc=0;
     for (let i = 1; i <= m; i++) {
-        // pn == 20*(i-1);
-        row = "<th>"+i+"</th><th>"+threeDigits(pn)+"</th>";
+        // pn == 20*(i-1);   <th>"+i+"</th>
+        let s2 = "<span class='t1'>Juzz "+i+"</span>"; //s2 is hidden
+        row = "<th>"+threeDigits(pn)+s2+"</th>";
         for (let j = 1; j <= n; j++) {
             pn++; //page number
-            let s1 = "", s2 = ""; //s1 is visible, s2 is hidden
+            let c = 0;
             if (pn == page[p]) {
-                let c = refA[p].split(" ").length;
-                s1 = ""+c;  //numToDots(c);
+                c = refA[p].split(" ").length;
                 let k = refA[p].indexOf(":");
                 k = (k<0? 0 : Number(refA[p].substring(0, k)));
-                s2 = "<span class='t2'>"+sName[k]+" "+refA[p]+"</span>";
+                let refs = sName[k]+" "+refA[p];
+                if (c > 1) refs += "&emsp;("+c+")";
+                s2 = "<span class='t2'>"+refs+"</span>";
                 p++; nc += c;
             } else {
                 s2 = "<span class='t1'>"+pLabel[pn]+"</span>";
             }
+            let ch = "&nbsp;"
             if (pn == sajda[q]) {
-                s1 += " ۩"; q++;
+                ch = "۩"; q++;
             }
-            row += "<td>"+s1+s2+"</td>";
+            let s1 = "background-color: "+toColor(c);
+            row += "<td style='"+s1+"'>"+ch+s2+"</td>";
         }
         text += "<tr>"+row+"</tr>";
     }
@@ -185,7 +183,7 @@ function displayRef(word, page, refA) {
     let t1 = "on "+refA.length+" pages";
     if (nc == 0) 
         out.innerText = "(too many verses)";
-    else out.innerText = nc+" instances "+t1;
+    else out.innerText = t1; //nc+" instances "+t1;
     console.log(word, t1); 
     //window.location.hash = "#"+word;
 }

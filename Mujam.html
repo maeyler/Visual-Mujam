@@ -10,33 +10,32 @@
     
 <style>
     p { 
-        width: 780px;
-        margin: 8px;
-        text-align: center;
+        width: 480px;
+        margin: 8px 0px;
     }
     select {
         font-size: 16px;
         font-family: Shaikh Hamdullah Mushaf, me_quran;
-        /*text-align-last: justify;*/
         padding-right: 10px;
         direction: rtl;
         color: blue;
     }
     table { 
-        width: 780px;
         border-collapse: collapse; 
         text-align: center;
     }
     th { 
         color: gray; 
-        padding: 0px 4px; 
+        padding: 0px; 
     }
     td { 
+        width: 22px;
+        height: 22px;
         border: 1px solid blue; 
-        padding: 0px 4px; 
-        /*font-weight: bolder;*/
+        padding: 0px; 
         cursor: default;
     }
+    th:hover .t1 { visibility: visible; }
     td:hover .t1 { visibility: visible; }
     td:hover .t2 { visibility: visible; }
     .t1, .t2 {
@@ -67,10 +66,11 @@
 <body>
 <p><select id=menu1 onChange="selectLetter()"></select> &nbsp;
    Root: <select id=menu2 onChange="selectRoot()"></select> &nbsp;
-   <span id=out>output will be here</span> &emsp;
+   <span id=out>output will be here</span> &nbsp;
    <select id=menu3 onChange="selectWord()"></select> &nbsp;
    <button id=combine onClick="selectRoot()">Combine</button>
 </p>
+
 <table id="tablo" onClick="doClick1(event)"></table>
 
 <p><span id=versi></span>
@@ -93,8 +93,8 @@ Ruya\t28h29j29j2b42m14054k2`;
         makeMenu(menu1, letters); 
         makeMenu(menu2, ['اللهم', 'بحيرة', 'بسط', 'استعجل']);
         readData();
-    } catch(e) { 
-        out.innerText = ""+e;
+    } catch(err) { 
+        out.innerText = ""+err;
     }
 </script>
 
