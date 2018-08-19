@@ -1,5 +1,5 @@
 "use strict";
-const VERSION = "V1.5";
+const VERSION = "V1.5a";
 var sajda;  //global array
 const MAX_REF = 100;
 const letterToRoots = new Map();
@@ -135,8 +135,7 @@ function toColor(n) {
     return "rgb("+g+", "+g+", "+b+")";
 }
 function displayRef(word, page, refA) {
-  function threeDigits(k) {
-  //same as (""+k).padStart(3,"0")
+  function threeDigits(k) { //same as (""+k).padStart(3,"0")
     let s = ""+k;  
     while (s.length < 3) s = "0"+s; 
     return s; 
@@ -144,10 +143,7 @@ function displayRef(word, page, refA) {
     const m=30, n=20;
     let row = "<th>Page</th>"; //"<th>Juzz</th>";
     for (let j = 1; j <= n; j++) {
-        let s;
-        if (j > 9) s = ""+j;
-        else s = "0"+j;
-        row += "<th>"+s+"</th>";
+        row += "<th>"+(j%10)+"</th>"; //use last digit
     }
     let text = "<tr>"+row+"</tr>";
     let pn=0, p=0, q=0, nc=0;
@@ -194,7 +190,7 @@ function doClick1(evt) {
     if (t.tagName.toLowerCase() != "td") return;
     const REF = "http://kuranmeali.com/Sayfalar.php?sayfa=";
     let r = t.parentElement.rowIndex;
-    let p = (20*(r-1)+t.cellIndex-1);
+    let p = 20*(r-1) + t.cellIndex;
     if (p == 1) p = 0; //first page is Fatiha
     console.log("click on p"+p);
     window.open(REF+p, "text", "resizable,scrollbars", true);
