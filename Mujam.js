@@ -1,5 +1,5 @@
 "use strict";
-const VERSION = "V1.5a";
+const VERSION = "V1.5b";
 var sajda;  //global array
 const MAX_REF = 100;
 const letterToRoots = new Map();
@@ -129,27 +129,29 @@ function selectWord(word) {
     let [page, refA] = parseRefs(str);
     displayRef(word, page, refA);
 }
-function toColor(n) {
-    if (n == 0) return "";
-    let g = 255-16*n, b = 160-10*n;
-    return "rgb("+g+", "+g+", "+b+")";
-}
 function displayRef(word, page, refA) {
   function threeDigits(k) { //same as (""+k).padStart(3,"0")
     let s = ""+k;  
     while (s.length < 3) s = "0"+s; 
     return s; 
   } 
+  function toColor(n) {
+    if (n == 0) return "";
+    if (n > 15) n = 15;
+    let g = 255-16*n, b = 160-10*n;
+    let col = "rgb("+g+", "+g+", "+b+")";
+    return "background-color: "+col;
+  }
     const m=30, n=20;
-    let row = "<th>Page</th>"; //"<th>Juzz</th>";
+    let row = "<th>Page</th>";
     for (let j = 1; j <= n; j++) {
         row += "<th>"+(j%10)+"</th>"; //use last digit
     }
     let text = "<tr>"+row+"</tr>";
     let pn=0, p=0, q=0, nc=0;
     for (let i = 1; i <= m; i++) {
-        // pn == 20*(i-1);   <th>"+i+"</th>
-        let s2 = "<span class='t1'>Juzz "+i+"</span>"; //s2 is hidden
+        // pn == 20*(i-1);   //s2 is hidden
+        let s2 = "<span class='t1'>Juzz "+i+"</span>";
         row = "<th>"+threeDigits(pn)+s2+"</th>";
         for (let j = 1; j <= n; j++) {
             pn++; //page number
@@ -169,8 +171,7 @@ function displayRef(word, page, refA) {
             if (pn == sajda[q]) {
                 ch = "۩"; q++;
             }
-            let s1 = "background-color: "+toColor(c);
-            row += "<td style='"+s1+"'>"+ch+s2+"</td>";
+            row += "<td style='"+toColor(c)+"'>"+ch+s2+"</td>";
         }
         text += "<tr>"+row+"</tr>";
     }
@@ -193,7 +194,7 @@ function doClick1(evt) {
     let p = 20*(r-1) + t.cellIndex;
     if (p == 1) p = 0; //first page is Fatiha
     console.log("click on p"+p);
-    window.open(REF+p, "text", "resizable,scrollbars", true);
+    window.open(REF+p, "quran", "resizable,scrollbars", true);
 }
 function doClick2() {
     const REF = "http://corpus.quran.com/qurandictionary.jsp";
