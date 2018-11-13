@@ -31,7 +31,7 @@ function parseRefs(str) {
     return indexToArray(indA)
 }
 function report1(t) {
-    let line = t.split("\n"), m = line.length-1;
+    let line = t.split("\n"), m = line.length;
     console.log(t.length+" chars "+m+" lines");
     for (let i = 0; i < m; i++) {
       let s = line[i];

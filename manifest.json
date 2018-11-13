@@ -1,0 +1,20 @@
+{
+  "name": "Visual-Mujam",
+  "short_name": "Visual-Mujam",
+  "description": "to present the word list of Quran in a visual context",
+  "start_url": "/Visual-Mujam/Mujam.html",
+  "display": "standalone",
+  "background_color": "cyan",
+  "theme_color": "cyan",
+  "icons": [
+    {
+      "src": "images/VM_b.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }, {
+      "src": "images/VM_s.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ]
+}
