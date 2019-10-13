@@ -1,5 +1,5 @@
 "use strict";
-const VERSION = "V1.5b";
+const VERSION = "V1.6";
 var sajda;  //global array
 const MAX_REF = 100;
 const letterToRoots = new Map();
@@ -149,11 +149,13 @@ function displayRef(word, page, refA) {
     }
     let text = "<tr>"+row+"</tr>";
     let pn=0, p=0, q=0, nc=0;
-    for (let i = 1; i <= m; i++) {
+    for (let i = 1; i <= m+1; i++) {
         // pn == 20*(i-1);   //s2 is hidden
-        let s2 = "<span class='t1'>Juzz "+i+"</span>";
+        let z = i>m? m : i;
+        let s2 = "<span class='t1'>Juzz "+z+"</span>";
         row = "<th>"+threeDigits(pn)+s2+"</th>";
-        for (let j = 1; j <= n; j++) {
+        let U = i>m? 4 : n;
+        for (let j = 1; j <= U; j++) {
             pn++; //page number
             let c = 0;
             if (pn == page[p]) {
@@ -173,6 +175,8 @@ function displayRef(word, page, refA) {
             }
             row += "<td style='"+toColor(c)+"'>"+ch+s2+"</td>";
         }
+        if (i>m) row += "<td class=small colspan=16>"
+          +"Visual Mujam "+VERSION+" (C) 2019 MAE </td>";
         text += "<tr>"+row+"</tr>";
     }
     tablo.innerHTML = text;
@@ -182,14 +186,15 @@ function displayRef(word, page, refA) {
         out.innerText = "(too many verses)";
     else out.innerText = t1; //nc+" instances "+t1;
     console.log(word, t1); 
-    //window.location.hash = "#"+word;
+    window.location.hash = "#"+word;
 }
 function doClick1(evt) {
     let t = evt.target;
     if (t.tagName.toLowerCase() != "span") return;
     t = t.parentElement;
     if (t.tagName.toLowerCase() != "td") return;
-    const REF = "http://kuranmeali.com/Sayfalar.php?sayfa=";
+    const REF = "https://maeyler.github.io/Iqra3/#p=";
+    //"http://kuranmeali.com/Sayfalar.php?sayfa=";
     let r = t.parentElement.rowIndex;
     let p = 20*(r-1) + t.cellIndex;
     if (p == 1) p = 0; //first page is Fatiha

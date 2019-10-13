@@ -3,8 +3,7 @@
         margin: 8px 0px;
     }
     select {
-        font-size: 16px;
-        font-family: me_quran, Shaikh Hamdullah Mushaf;
+        font: 16px me_quran, serif;
         margin-right: 8px;
         padding-right: 4px;
         direction: rtl;
@@ -51,9 +50,17 @@
         background-color: blue;
         color: white;
     }
+    .small {
+        font-size: 12px;
+        font-family: arial, sans-serif;
+    }
     #corpus {
         color: blue;
         cursor: pointer;
         text-decoration: underline;
     }
+	@font-face {
+	  font-family: me_quran;
+	  src: url("https://maeyler.github.io/Iqra3/me_quran.ttf")
+	}
 
