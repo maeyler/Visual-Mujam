@@ -1,4 +1,32 @@
-"use strict";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Utilities.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Utilities.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>"use strict";
 /**
  * Arabic string to use at translation to buckWalter.
  *
@@ -19,7 +47,7 @@ const toBuck = new Map();
  * keys: arabic lettrs
  * Values: English buckwalter translation.
  */
-for (let i = 0; i < 29; i++) toBuck.set(aaa[i], bbb[i]);
+for (let i = 0; i &lt; 29; i++) toBuck.set(aaa[i], bbb[i]);
 /**
  * Translating Arabic letters to Buckwalter.
  *  will stop when it face a non-arabic letter.
@@ -29,7 +57,7 @@ for (let i = 0; i < 29; i++) toBuck.set(aaa[i], bbb[i]);
  */
 function toBuckwalter(s) {
     let b = "";
-    for (let i = 0; i < s.length; i++) {
+    for (let i = 0; i &lt; s.length; i++) {
         let c = toBuck.get(s[i]);
         if (!c) break;
         b += c;
@@ -76,7 +104,7 @@ function decode36(s) {
 function encodeLine(s) {
     const sa = s.split(" ");
     var v = "";
-    for (var j = 0; j < sa.length; j++) {
+    for (var j = 0; j &lt; sa.length; j++) {
         const cv = sa[j].split(":");
         const i = indexOf(Number(cv[0]), Number(cv[1]));
         v += encode36(i);
@@ -97,7 +125,7 @@ function encodeLine(s) {
  */
 function decodeLine(s) {
     var v = "";
-    for (var j = 0; j < s.length; j += 3) {
+    for (var j = 0; j &lt; s.length; j += 3) {
         const c = s.substring(j, j + 3);
         const cv = toCV(decode36(c));
         v += cv[0] + ":" + cv[1] + " ";
@@ -139,20 +167,19 @@ function pageOf(c, v) {
     var p = Math.trunc(i * nPage / nVerse);
     // TODO;
     if (i == index[p]) return p;
-    while (i < index[p]) p--;
+    while (i &lt; index[p]) p--;
     while (i > index[p + 1]) p++;
     return p;
 }
 /**
  * Get the chapter number based on the index of the verse.
  * 
- * @param {number} i index number.
- * @returns {number} chapter number.
+ * @param {number} i index number. 
  */
 function toChapter(i) {
     // loop all chapter and check if the index is in it, since last holds the summed number of indexes till that chapter.
-    for (var c = 1; c <= nChap; c++)
-        if (i <= last[c]) return c;
+    for (var c = 1; c &lt;= nChap; c++)
+        if (i &lt;= last[c]) return c;
 }
 
 /**
@@ -351,11 +378,33 @@ Nas`;
     index[0] = 0;
     sName = suraNames.split("\n");
     //what did it used for?
-    for (let p = 0; p <= nPage; p++) {
+    for (let p = 0; p &lt;= nPage; p++) {
         index[p + 1] = index[p] + count[p];
         let [c, v] = toCV(index[p] + 1);
         pLabel.push(sName[c] + " " + c + ":" + v + ", p." + p)
     }
     console.log(nPage + " pages -> " + index[nPage]);
 }
-init()
+init()</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#aaa">aaa</a></li><li><a href="global.html#addIndexes">addIndexes</a></li><li><a href="global.html#bbb">bbb</a></li><li><a href="global.html#decode36">decode36</a></li><li><a href="global.html#decodeLine">decodeLine</a></li><li><a href="global.html#displayRef">displayRef</a></li><li><a href="global.html#doClick1">doClick1</a></li><li><a href="global.html#doClick2">doClick2</a></li><li><a href="global.html#encode36">encode36</a></li><li><a href="global.html#encodeLine">encodeLine</a></li><li><a href="global.html#index">index</a></li><li><a href="global.html#indexOf">indexOf</a></li><li><a href="global.html#indexToArray">indexToArray</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#last">last</a></li><li><a href="global.html#letterToRoots">letterToRoots</a></li><li><a href="global.html#makeMenu">makeMenu</a></li><li><a href="global.html#MAX_REF">MAX_REF</a></li><li><a href="global.html#nChap">nChap</a></li><li><a href="global.html#pageOf">pageOf</a></li><li><a href="global.html#parseRefs">parseRefs</a></li><li><a href="global.html#readData">readData</a></li><li><a href="global.html#report1">report1</a></li><li><a href="global.html#report2">report2</a></li><li><a href="global.html#rootToWords">rootToWords</a></li><li><a href="global.html#sajda">sajda</a></li><li><a href="global.html#selectLetter">selectLetter</a></li><li><a href="global.html#selectRoot">selectRoot</a></li><li><a href="global.html#selectWord">selectWord</a></li><li><a href="global.html#toBuck">toBuck</a></li><li><a href="global.html#toBuckwalter">toBuckwalter</a></li><li><a href="global.html#toChapter">toChapter</a></li><li><a href="global.html#toCV">toCV</a></li><li><a href="global.html#VERSION">VERSION</a></li><li><a href="global.html#wordToRefs">wordToRefs</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Tue Oct 15 2019 07:38:20 GMT+0300 (GMT+03:00)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

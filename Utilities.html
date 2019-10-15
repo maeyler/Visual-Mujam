@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
@@ -8,70 +9,76 @@
 </head>
 
 <script>
-function report(s) {
-    output.innerHTML = s; console.log(s);
-}
-function report2(c, v, i) {
-    report("Sayfa: "+pageOf(c, v)+" Kod: "+encode36(i))
-}
-function encode() {
-    var s = encodeLine(ref.value.trim());
-    report(ref.value+" -> "+s);
-    kod.value = s;
-}
-function decode() {
-    var s = decodeLine(kod.value.trim());
-    report(kod.value +" -> "+s);
-    ref.value = s;
-}
-function toIndex() {
-    const c = Number(sure.value);
-    const v = Number(ayet.value);
-    const i = indexOf(c, v); indeks.value = i;
-    report2(c, v, i);
-}
-function toLocation() {
-    const i = Number(indeks.value);
-    const cv = toCV(i); 
-    sure.value = cv[0]; ayet.value = cv[1]; 
-    report2(Number(cv[0]), Number(cv[1]), i);
-}
+    function report(s) {
+        output.innerHTML = s;
+        console.log(s);
+    }
+
+    function report2(c, v, i) {
+        report("Sayfa: " + pageOf(c, v) + " Kod: " + encode36(i))
+    }
+
+    function encode() {
+        var s = encodeLine(ref.value.trim());
+        report(ref.value + " -> " + s);
+        kod.value = s;
+    }
+
+    function decode() {
+        var s = decodeLine(kod.value.trim());
+        report(kod.value + " -> " + s);
+        ref.value = s;
+    }
+
+    function toIndex() {
+        const c = Number(sure.value);
+        const v = Number(ayet.value);
+        const i = indexOf(c, v);
+        indeks.value = i;
+        report2(c, v, i);
+    }
+
+    function toLocation() {
+        const i = Number(indeks.value);
+        const cv = toCV(i);
+        sure.value = cv[0];
+        ayet.value = cv[1];
+        report2(Number(cv[0]), Number(cv[1]), i);
+    }
 </script>
 
 <body>
-<h2 id=title></h2>
-<p />
-Sure: <input type=number id=sure size = 5 value=25>
-Ayet: <input type=number id=ayet size = 5 value=60>
-<input type=button value="Indeks" onClick="toIndex()">
-<p />
-Indeks <input type=number id=indeks onChange="toLocation()">
-<input type=button value="Ayet" onClick="toLocation()">
+    <h2 id=title></h2>
+    <p /> Sure: <input type=number id=sure size=5 value=25> Ayet: <input type=number id=ayet size=5 value=60>
+    <input type=button value="Indeks" onClick="toIndex()">
+    <p /> Indeks <input type=number id=indeks onChange="toLocation()">
+    <input type=button value="Ayet" onClick="toLocation()">
 
-<p id=output>Sayfa ??</p>
+    <p id=output>Sayfa ??</p>
 
-<hr />
-Ref: 
-<input type=text id=ref value="" onChange="encode()">
-<input type=button value="Encode" onClick="encode()">
-<p />
-Kod 
-<input type=text id=kod value="38z3fs3x8" onChange="decode()">
-<input type=button value="Decode" onClick="decode()">
+    <hr /> Ref:
+    <input type=text id=ref value="" onChange="encode()">
+    <input type=button value="Encode" onClick="encode()">
+    <p /> Kod
+    <input type=text id=kod value="38z3fs3x8" onChange="decode()">
+    <input type=button value="Decode" onClick="decode()">
 
-<p />
-<hr />
-Sure/Ayet <==> Sayfa/Indeks <br />
-Ayrıca her ayetin kodu <br />
+    <p />
+    <hr /> Sure/Ayet
+    <==> Sayfa/Indeks <br /> Ayrıca her ayetin kodu <br />
 
-<script>
-"use strict";
-title.innerHTML = document.title; 
-sure.min = 1; sure.max = nChap;
-ayet.min = 1; ayet.max = 300;
-indeks.min = 1; indeks.max = nVerse;
-toIndex();
-</script>
+        <script>
+            "use strict";
+            title.innerHTML = document.title;
+            sure.min = 1;
+            sure.max = nChap;
+            ayet.min = 1;
+            ayet.max = 300;
+            indeks.min = 1;
+            indeks.max = nVerse;
+            toIndex();
+        </script>
 
 </body>
+
 </html>
