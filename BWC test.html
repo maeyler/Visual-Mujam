@@ -1,0 +1,54 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Arabic transliteration</title>
+
+  <style>
+    body { 
+      max-width: 500px;
+    }
+    #bwc { 
+      width: 100%;
+      font: 14px mono;
+    }
+    #ara { 
+      width: 100%;
+      font: 20px me_quran;
+    }
+  </style>
+  </head>
+  <body>
+    
+    <h2 id=title></h2>
+
+    <p>
+Buckwalter<br>
+<input id="bwc" onchange="ara.value=convert(BWC.b2aMap, value)"></input>
+<br><br>
+Arabic<br>
+<input id="ara" onchange="bwc.value=convert(BWC.a2bMap, value)"></input>
+    </p>
+
+<b>Messages</b>
+    <ul id=out></ul>
+
+<hr>    
+    <p>Reference: <a href="https://github.com/stts-se/buckwalter-converter">
+    stts-se buckwalter-converter</a></p>
+
+<script src="buckwalter-converter.js"></script>
+<script>
+"use strict";
+function convert(map, s) {
+    let c = BWC.convert(map, s)  //, true)
+    if (c.errors) out.innerHTML 
+        = c.errors.map(x => "<li>"+x+"</li>").join('')
+    return c.output
+}
+
+title.innerText = document.title;
+</script>
+
+  </body>
+</html>

@@ -4,7 +4,7 @@
  * The code version.
  * 
  */
-const VERSION = "V1.6";
+const VERSION = "V1.7";
 /**
  * Global array to hold the places of Sajda.
  * @global 
@@ -117,14 +117,9 @@ function report1(t) {
         // get the word and its reference.
         wordToRefs.set(s.substring(0, k), s.substring(k + 1));
     }
-    // destructure for sajda -- check MDN docs --> sajda= [];
+    // destructure for sajda
     let str = "1w82bu2i62ne2s430l38z3gg3pq42y4a74qm5k15q5";
     [sajda, ] = parseRefs(str);
-    /*
-      let h = window.location.hash.substring(1);
-      if (h.length > 0) menu3.value = h;
-      console.log("Hash: "+h);
-    */
     makeMenu(menu3, [...wordToRefs.keys()]);
     selectWord();
 }
@@ -151,7 +146,7 @@ function report2(t) {
     // number of lines.
     let i = 0;
     while (i < m) {
-        let root = convert(line[i]);
+        let [root, num] = line[i].split(' ');  //convert(line[i]);
         let j = i + 1,
             list = [];
         while (j < m) {
@@ -175,7 +170,7 @@ function report2(t) {
     // sort and set menu one (letters)
     makeMenu(menu1, keys.sort());
     selectLetter("س");
-    selectRoot(convert("سجد 92"));
+    selectRoot(convert("سجد"));
 }
 /**
  * Read data file from link, then parse it.
@@ -187,7 +182,7 @@ function readData() {
     const url = site + "data.txt";
     fetch(url)
         .then(r => r.text()) //response
-        .then(t => report2(t)); //text
+        .then(report2); //text
 }
 
 /**
@@ -209,11 +204,12 @@ function makeMenu(m, a) { //first item is selected
  * 
  * @param {string} ch letter to be selected (Arabic)
  */
-function selectLetter(ch) {
+function selectLetter(ch, skip) {
     if (!ch) ch = menu1.value;
+    else if (ch == menu1.value) return;
     else menu1.value = ch;
     makeMenu(menu2, letterToRoots.get(ch));
-    selectRoot();
+    if (!skip) selectRoot();
 }
 /**
  * select sepcified root, if undefined the menu2 value will be the selected.
@@ -222,7 +218,12 @@ function selectLetter(ch) {
  */
 function selectRoot(root) {
     if (!root) root = menu2.value;
-    else menu2.value = root;
+    else if (root == menu2.value) return;
+    else {
+      let c = root[0];
+      if (menu1.value != c) selectLetter(c, true)
+      menu2.value = root;
+    }
     let list = rootToWords.get(root);
     let nL = list.length;
     makeMenu(menu3, list);
@@ -244,6 +245,8 @@ function selectRoot(root) {
     indA.sort((a, b) => (a - b));
     let [page, refs] = indexToArray(indA);
     displayRef(root, page, refs);
+    // set the windows hash location to the root
+    window.location.hash = "#r=" + toBuckwalter(root);
 }
 /**
  * Select word, if undefined menu3 values will be the selected one.
@@ -258,6 +261,7 @@ function selectRoot(root) {
  */
 function selectWord(word) {
     if (!word) word = menu3.value;
+    else if (word == menu3.value) return;
     else menu3.value = word;
     combine.hidden = false;
     let str = wordToRefs.get(word);
@@ -330,7 +334,7 @@ function displayRef(word, page, refA) {
             }
             row += "<td style='" + toColor(c) + "'>" + ch + s2 + "</td>";
         }
-        if (i > m) row += "<td class=small colspan=16>" +
+        if (i > m) row += "<td colspan=16>" +
             "Visual Mujam " + VERSION + " (C) 2019 MAE </td>";
         text += "<tr>" + row + "</tr>";
     }
@@ -342,27 +346,33 @@ function displayRef(word, page, refA) {
         out.innerText = "(too many verses)";
     else out.innerText = t1; //nc+" instances "+t1;
     console.log(word, t1);
-    // set the windows hash location to the word
-    window.location.hash = "#" + word;
 }
+/**
+ * child window (or tab) to display Quran
+ * the same window is used on each click
+ * (this is much better than <a> tag)
+ */
+var iqra
 /**
  * Open the quran webPage after checking it's event.
  * ??
  * @param {*} evt get the event trigger. 
  */
 function doClick1(evt) {
-    // check if the targetted event is the needed cell.
     let t = evt.target;
     if (t.tagName.toLowerCase() != "span") return;
     t = t.parentElement;
     if (t.tagName.toLowerCase() != "td") return;
-    const REF = "https://maeyler.github.io/Iqra3/#p=";
+    const REF = "https://maeyler.github.io/Iqra3/";
     //"http://kuranmeali.com/Sayfalar.php?sayfa=";
     let r = t.parentElement.rowIndex;
-    let p = 20 * (r - 1) + t.cellIndex;
-    if (p == 1) p = 0; //first page is Fatiha
-    console.log("click on p" + p);
-    window.open(REF + p, "quran", "resizable,scrollbars", true);
+    let p = 20*(r-1) + t.cellIndex;
+    console.log("click on p"+p);
+    //window.open(REF+p, "quran", "resizable,scrollbars", true);
+    if (!iqra || iqra.closed) 
+         iqra = open(REF);  //, '_blank')
+    else iqra.focus();
+    iqra.location.hash="#p="+p;
 }
 /**
  * Open Corpus quran link that related to the selected word specific word. 
@@ -373,8 +383,8 @@ function doClick1(evt) {
  */
 function doClick2() {
     const REF = "http://corpus.quran.com/qurandictionary.jsp";
-    let p = "",
-        v = menu2.value;
+    let p = "";
+    let v = menu2.value;
     if (v) p = "?q=" + toBuckwalter(v);
     console.log("corpus" + p);
     window.open(REF + p, "corpus", "resizable,scrollbars", true);

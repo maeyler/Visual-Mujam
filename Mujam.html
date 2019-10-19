@@ -7,6 +7,7 @@
     <link rel="manifest" href="manifest.json"> 
     <link rel="stylesheet" href="Mujam.css" media="all">
     <script src="Mujam.js"></script>
+    <script src="buckwalter.js"></script>
     <script src="Utilities.js"></script>
     <title>Mujam </title>
   <script>
@@ -49,14 +50,22 @@ const DEF = //before reading remote data
 Adam\t11211411511611819219s1jc1qt1r11r81r91rd1rh1va2m22mb2ou2s42wf2wg2wh2wk2wl3wl
 Ismail\t13o13q13w13z1431ah1i81ob2dp2s02zc43m
 Ruya\t28h29j29j2b42m14054k2`;
+function gotoHashRoot() {
+  let h = location.hash
+  if (!h.startsWith('#r=')) return false
+  selectRoot(fromBuckwalter(h.substring(3)))
+  return true
+}
     const TITLE = document.title;
-    //versi.innerText = "Visual Mujam "+VERSION+" (C) 2018 MAE -- ";
+    window.addEventListener("hashchange", gotoHashRoot);
+    if (opener && opener.location.href.includes('Iqra3'))
+        iqra = opener
     try {
         report1(DEF);
         let letters = [];
         for (let c=1575; c<1609; c++) letters.push(String.fromCharCode(c));
         makeMenu(menu1, letters); 
-        makeMenu(menu2, ['اللهم', 'بحيرة', 'بسط', 'استعجل']);
+        //makeMenu(menu2, ['اللهم', 'بحيرة', 'بسط', 'استعجل']);
         readData();
     } catch(err) { 
         out.innerText = ""+err;

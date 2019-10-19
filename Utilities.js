@@ -1,45 +1,52 @@
 "use strict";
 /**
- * Arabic string to use at translation to buckWalter.
+ * Arabic string to use at translation to buckWalter. NOT USED
  *
- */
+ * 
 const aaa = "ابتثجحخدذرزسشصضطظعغفقكلمنهويی";
 /**
  * Buckwalter translating letters.
  *
- */
+ *
 const bbb = "AbtvjHxd*rzs$SDTZEgfqklmnhwyY";
 /**
  * Map used to map two strings together.
  *
- */
+ *
 const toBuck = new Map();
 /**
- * Maping two strings 
- * keys: arabic lettrs
+ * Mapping two strings 
+ * keys: arabic letters
  * Values: English buckwalter translation.
- */
+ *
 for (let i = 0; i < 29; i++) toBuck.set(aaa[i], bbb[i]);
-/**
- * Translating Arabic letters to Buckwalter.
- *  will stop when it face a non-arabic letter.
- * 
- * @param {string} s The string to be translated
- * @returns {string} buckwalter tranlsation 
- */
-function toBuckwalter(s) {
-    let b = "";
-    for (let i = 0; i < s.length; i++) {
-        let c = toBuck.get(s[i]);
-        if (!c) break;
-        b += c;
-    }
-    return b;
-}
-// legacy code.
+
+// legacy code. NOT USED
 const BASE = 80,
     MIN = 7680,
     MAX = MIN + BASE - 1;
+*/
+/**
+ * Translating Arabic letters to Buckwalter.
+ * 
+ * uses BWC object in src="buckwalter-converter.js"
+ * code from https://github.com/stts-se/buckwalter-converter
+ *
+ * @param {string} s  Arabic string 
+ * @returns {string}  Buckwalter transliteration 
+ */
+function toBuckwalter(s) {
+    return BWC.convert(BWC.a2bMap, s).output
+}
+/**
+ * Translating to Arabic letters back from Buckwalter.
+ * 
+ * @param {string} s  Buckwalter transliteration
+ * @returns {string}  Arabic string
+ */
+function fromBuckwalter(s) {
+    return BWC.convert(BWC.b2aMap, s).output
+}
 /**
  * Encode a number to base 36.
  * started from 100 for optimisation.
@@ -168,7 +175,7 @@ function toCV(i) {
     return [c, i - last[c - 1]];
 }
 /**
- * Array holds the summed number of verses based on chapter location.
+ * Array holds the cumulative number of verses based on chapter location.
  */
 const last = [0, 7, 293, 493, 669, 789, 954, 1160, 1235, 1364,
     1473, 1596, 1707, 1750, 1802, 1901, 2029, 2140, 2250, 2348, 2483,
@@ -189,7 +196,7 @@ const last = [0, 7, 293, 493, 669, 789, 954, 1160, 1235, 1364,
 const nChap = last.length - 1,
     nVerse = last[nChap];
 /**
- * index array?? 
+ * index: verse index for each page
  * nPage: number of pages
  * sName: Sura names
  * pLabel: show the sura name, Chapter, Last vers of this page from the sura and page number.
@@ -346,7 +353,6 @@ Felak
 Nas`;
     // number of pages.
     nPage = count.length;
-    // index?? 
     index = new Array(nPage + 1);
     index[0] = 0;
     sName = suraNames.split("\n");

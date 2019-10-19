@@ -1,9 +1,15 @@
+    body {
+        max-width: 520px;
+        width: 100%;
+        font-size: 12px;
+        font-family: arial, sans-serif;
+    }
     p { 
         width: 490px;
         margin: 8px 0px;
     }
     select {
-        font: 16px me_quran, serif;
+        font: 17px me_quran, serif;
         margin-right: 8px;
         padding-right: 4px;
         direction: rtl;
@@ -18,8 +24,8 @@
         cursor: default;
     }
     th { 
-        min-width: 20px;
-        max-height: 20px;
+        width: 20px;
+        height: 20px;
         height: 20px;
         color: #666666; 
         font-weight: normal;
@@ -49,10 +55,6 @@
     .t2 {
         background-color: blue;
         color: white;
-    }
-    .small {
-        font-size: 12px;
-        font-family: arial, sans-serif;
     }
     #corpus {
         color: blue;
