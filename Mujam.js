@@ -4,7 +4,7 @@
  * The code version.
  * 
  */
-const VERSION = "V1.7";
+const VERSION = "V1.8";
 /**
  * Global array to hold the places of Sajda.
  * @global 
@@ -65,7 +65,8 @@ function indexToArray(indA) {
         let p = pageOf(c, v);
         // if the page are same as before.
         if (prev == p)
-        // get pop() gets the last element of an array, then add CV and add it at the ned 
+        // get pop() as the last element of the array, 
+        // then add CV at the end 
             cv = refA.pop() + " " + cv;
         else {
             page.push(p);
@@ -169,8 +170,8 @@ function report2(t) {
     let keys = [...letterToRoots.keys()];
     // sort and set menu one (letters)
     makeMenu(menu1, keys.sort());
-    selectLetter("س");
-    selectRoot(convert("سجد"));
+    selectLetter("س", true);
+    selectRoot("سجد");
 }
 /**
  * Read data file from link, then parse it.
@@ -209,7 +210,8 @@ function selectLetter(ch, skip) {
     else if (ch == menu1.value) return;
     else menu1.value = ch;
     makeMenu(menu2, letterToRoots.get(ch));
-    if (!skip) selectRoot();
+    if (skip) menu2.value='';
+    else selectRoot();  //never used
 }
 /**
  * select sepcified root, if undefined the menu2 value will be the selected.
@@ -243,8 +245,8 @@ function selectRoot(root) {
             addIndexes(str, indA);
     }
     indA.sort((a, b) => (a - b));
-    let [page, refs] = indexToArray(indA);
-    displayRef(root, page, refs);
+    //let [page, refs] = indexToArray(indA);
+    displayRef(root, indexToArray(indA));
     // set the windows hash location to the root
     window.location.hash = "#r=" + toBuckwalter(root);
 }
@@ -265,9 +267,8 @@ function selectWord(word) {
     else menu3.value = word;
     combine.hidden = false;
     let str = wordToRefs.get(word);
-    //(pager=array of number, RefA string of Chapter:Verses)
-    let [page, refA] = parseRefs(str);
-    displayRef(word, page, refA);
+    //let [page, refA] = parseRefs(str);
+    displayRef(word, parseRefs(str));
 }
 /**
  * Create and build the HTML table to show the information on it.
@@ -276,7 +277,7 @@ function selectWord(word) {
  * @param {Array} page: Array of pages numbers
  * @param {Array} refA Array of pages references (chapter:verse ..)
  */
-function displayRef(word, page, refA) {
+function displayRef(word, [page, refA]) {
     // put three zeros on the first of the number (K)
     function threeDigits(k) { //same as (""+k).padStart(3,"0")
         let s = "" + k;
@@ -334,8 +335,11 @@ function displayRef(word, page, refA) {
             }
             row += "<td style='" + toColor(c) + "'>" + ch + s2 + "</td>";
         }
-        if (i > m) row += "<td colspan=16>" +
-            "Visual Mujam " + VERSION + " (C) 2019 MAE </td>";
+        if (i > m) {
+          row += "<td colspan=15>"
+           +"Visual Mujam "+VERSION+" (C) 2019 MAE </td>"
+           +"<td id=corpus onClick=doClick2()>K</td>"
+        }
         text += "<tr>" + row + "</tr>";
     }
     // end of creation.

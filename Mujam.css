@@ -26,12 +26,13 @@
     th { 
         width: 20px;
         height: 20px;
-        height: 20px;
         color: #666666; 
         font-weight: normal;
         padding: 0px; 
     }
     td { 
+        width: 20px;
+        height: 20px;
         border: 1px solid blue; 
         padding: 0px; 
     }

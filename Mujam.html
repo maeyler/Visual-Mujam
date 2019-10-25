@@ -38,7 +38,7 @@
 
 <table id="tablo" onClick="doClick1(event)"></table>
 
-<p><span id=versi></span>
+<!--p><span id=versi></span>
 <span id=corpus onClick="doClick2()">Data Source</span>
 <!--a href="http://corpus.quran.com/qurandictionary.jsp"></a-->
 </p>
@@ -52,8 +52,16 @@ Ismail\t13o13q13w13z1431ah1i81ob2dp2s02zc43m
 Ruya\t28h29j29j2b42m14054k2`;
 function gotoHashRoot() {
   let h = location.hash
-  if (!h.startsWith('#r=')) return false
-  selectRoot(fromBuckwalter(h.substring(3)))
+  if (!h || h.length <6) return false
+  if (h.startsWith('#r=')) 
+    selectRoot(fromBuckwalter(h.substring(3)))
+  else {
+    let title = '', refs = h.substring(1)
+    if (refs.includes('='))
+        [title, refs] = refs.split('=')
+    displayRef(title, parseRefs(refs))
+    menu2.value=''
+  }
   return true
 }
     const TITLE = document.title;
@@ -65,7 +73,6 @@ function gotoHashRoot() {
         let letters = [];
         for (let c=1575; c<1609; c++) letters.push(String.fromCharCode(c));
         makeMenu(menu1, letters); 
-        //makeMenu(menu2, ['اللهم', 'بحيرة', 'بسط', 'استعجل']);
         readData();
     } catch(err) { 
         out.innerText = ""+err;
