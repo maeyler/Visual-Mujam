@@ -4,7 +4,7 @@
  * The code version.
  * 
  */
-const VERSION = "V1.8a";
+const VERSION = "V1.8c";
 /**
  * Global array to hold the places of Sajda.
  * used in marking sajdah verses
