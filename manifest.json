@@ -8,11 +8,11 @@
   "theme_color": "cyan",
   "icons": [
     {
-      "src": "images/VM_b.png",
+      "src": "images/large.png",
       "sizes": "512x512",
       "type": "image/png"
     }, {
-      "src": "images/VM_s.png",
+      "src": "images/small.png",
       "sizes": "256x256",
       "type": "image/png"
     }

@@ -1,6 +1,6 @@
 const CACHE ='VM'
 const FILES = [
-  '/Iqra3/',
+  '/Iqra3/index.html',
   '/Iqra3/iqra.css',
   '/Iqra3/icon.png',
   '/Iqra3/image/sura.png',
@@ -9,13 +9,14 @@ const FILES = [
   '/Iqra3/iqra.names',
   '/Iqra3/me_quran.ttf',
   '/Iqra3/manifest.json',
-  '/Visual-Mujam/',
   '/Visual-Mujam/Mujam.html',
   '/Visual-Mujam/Mujam.css',
   '/Visual-Mujam/Mujam.js',
   '/Visual-Mujam/data.txt',
   '/Visual-Mujam/Utilities.js',
   '/Visual-Mujam/buckwalter.js',
+  '/Visual-Mujam/images/small.png',
+  '/Visual-Mujam/images/large.png',
   '/Visual-Mujam/manifest.json'
 ]
 function installCB(e) {
@@ -35,9 +36,8 @@ function cacheCB(e) { //cache first
       found = true; break
     }
   if (!found) console.log('not found', req.url);
-  let p = found? caches.match(req) : fetch(req)
   e.respondWith(
-    p  //.then(r1 => r1, console.log)
+    found? caches.match(req) : fetch(req)
   )
 }
 self.addEventListener('fetch', cacheCB)

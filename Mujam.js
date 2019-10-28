@@ -4,15 +4,22 @@
  * The code version.
  * 
  */
-const VERSION = "V1.8";
+const VERSION = "V1.8a";
 /**
  * Global array to hold the places of Sajda.
- * @global 
- * 
+ * used in marking sajdah verses
+ *
+ * @see displayRef 
  */
-var sajda; //global array
+var sajda;
 /**
- * used in selected roots... check it again.
+ * child window (or tab) to display Quran
+ * the same window is used on each click
+ * (this is much better than <a> tag)
+ */
+var iqra;
+/**
+ * If a word has too many refs, it is not indexed
  * 
  */
 const MAX_REF = 100;
@@ -23,7 +30,6 @@ const MAX_REF = 100;
 const letterToRoots = new Map();
 /**
  * A map holds the roots and its words.
- * 
  * set at report2 @see report2
  */
 const rootToWords = new Map();
@@ -32,6 +38,7 @@ const rootToWords = new Map();
  * set at report2 @see report2
  */
 const wordToRefs = new Map();
+
 /**
  * 
  * Used to parse indexes from a string encoded by encode36 and add it to index array (indA)
@@ -94,35 +101,26 @@ function parseRefs(str) {
 }
 
 /**
- * Initialize the first table from local string to show elements offline. 
- * 
- * string structure: suraName+" "+Base 36 reference string.
- * 
+ * Initialize the globals
  * 
  * @see makeMenu
  * @see selectWord
  * 
- * @param {string} t string contains specific words and it's encoded reference string.
+ * @param none
  * 
  */
-function report1(t) {
-    // get each word's line by itself.
-    let line = t.split("\n"),
-        m = line.length;
-    console.log(t.length + " chars " + m + " lines");
-
-    for (let i = 0; i < m; i++) {
-        let s = line[i];
-        let k = s.indexOf("\t");
-        if (k < 0) throw Error("TAB missing " + s);
-        // get the word and its reference.
-        wordToRefs.set(s.substring(0, k), s.substring(k + 1));
-    }
+function initialize() {
     // destructure for sajda
     let str = "1w82bu2i62ne2s430l38z3gg3pq42y4a74qm5k15q5";
     [sajda, ] = parseRefs(str);
-    makeMenu(menu3, [...wordToRefs.keys()]);
-    selectWord();
+    let letters = [];
+    for (let c=1575; c<1609; c++) letters.push(String.fromCharCode(c));
+    makeMenu(menu1, letters); 
+    try {
+        readData();
+    } catch(err) { 
+        out.innerText = ""+err;
+    }
 }
 /**
  * Parsing and using remote data. 
@@ -134,27 +132,24 @@ function report1(t) {
  */
 function report2(t) {
     // convert the one space to em-space " "
-    function convert(s) { //should be done in data.txt
+    function convert(s) { // NOT USED
         const EM_SPACE = String.fromCharCode(8195);
         return s.replace(" ", EM_SPACE);
     }
-    // clear the the report1 data.
-    wordToRefs.clear();
-
     let line = t.split("\n"),
         m = line.length - 1;
     console.log(t.length + " chars " + m + " lines");
     // number of lines.
     let i = 0;
     while (i < m) {
-        let [root, num] = line[i].split(' ');  //convert(line[i]);
+        let [root, num] = line[i].split(' ');
         let j = i + 1,
             list = [];
         while (j < m) {
             let s = line[j],
                 k = s.indexOf("\t");
             if (k <= 0) break;
-            let word = convert(s.substring(0, k));
+            let word = s.substring(0, k);
             wordToRefs.set(word, s.substring(k + 1));
             list.push(word);
             j++;
@@ -170,8 +165,10 @@ function report2(t) {
     let keys = [...letterToRoots.keys()];
     // sort and set menu one (letters)
     makeMenu(menu1, keys.sort());
-    selectLetter("س", true);
-    selectRoot("سجد");
+    if (!gotoHashRoot()) {
+        selectLetter("س", true);
+        selectRoot("سجد");
+    }
 }
 /**
  * Read data file from link, then parse it.
@@ -352,12 +349,6 @@ function displayRef(word, [page, refA]) {
     console.log(word, t1);
 }
 /**
- * child window (or tab) to display Quran
- * the same window is used on each click
- * (this is much better than <a> tag)
- */
-var iqra
-/**
  * Open the quran webPage after checking it's event.
  * ??
  * @param {*} evt get the event trigger. 
@@ -367,16 +358,17 @@ function doClick1(evt) {
     if (t.tagName.toLowerCase() != "span") return;
     t = t.parentElement;
     if (t.tagName.toLowerCase() != "td") return;
-    const REF = "https://maeyler.github.io/Iqra3/";
+    const REF = "../Iqra3/index.html";
     //"http://kuranmeali.com/Sayfalar.php?sayfa=";
     let r = t.parentElement.rowIndex;
     let p = 20*(r-1) + t.cellIndex;
-    console.log("click on p"+p);
+    let h = "#p="+p;
+    console.log(h);
     //window.open(REF+p, "quran", "resizable,scrollbars", true);
-    if (!iqra || iqra.closed) 
-         iqra = open(REF);  //, '_blank')
-    else iqra.focus();
-    iqra.location.hash="#p="+p;
+    if (!iqra || iqra.closed) {
+      iqra = open(REF+h); return  //, '_blank')
+    }
+    iqra.focus(); iqra.location.hash = h
 }
 /**
  * Open Corpus quran link that related to the selected word specific word. 
@@ -393,3 +385,27 @@ function doClick2() {
     console.log("corpus" + p);
     window.open(REF + p, "corpus", "resizable,scrollbars", true);
 }
+/**
+ * Use the hash part of URL in the address bar
+ *
+ * @see displayRef
+ * 
+ * @returns true if hash part of URL is not empty
+ * 
+ */
+function gotoHashRoot() {
+  let h = location.hash
+  if (h.length <6) return false
+  if (h.startsWith('#r=')) 
+    selectRoot(fromBuckwalter(h.substring(3)))
+  else {
+    let title = '', refs = h.substring(1)
+    if (refs.includes('='))
+        [title, refs] = refs.split('=')
+    displayRef(title, parseRefs(refs))
+    menu2.value=''; menu3.value=''
+    combine.hidden = true
+  }
+  return true
+}
+
