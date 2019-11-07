@@ -4,7 +4,7 @@
  * The code version.
  * 
  */
-const VERSION = "V1.8c";
+const VERSION = "V1.9";
 /**
  * Global array to hold the places of Sajda.
  * used in marking sajdah verses
@@ -358,7 +358,7 @@ function doClick1(evt) {
     if (t.tagName.toLowerCase() != "span") return;
     t = t.parentElement;
     if (t.tagName.toLowerCase() != "td") return;
-    const REF = "../Iqra3/index.html";
+    const REF = "iqra3.09.html";
     //"http://kuranmeali.com/Sayfalar.php?sayfa=";
     let r = t.parentElement.rowIndex;
     let p = 20*(r-1) + t.cellIndex;
